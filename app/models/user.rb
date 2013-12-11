@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :token, :presence => true
   validates :name, :presence => true
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_token
 
   has_one :profile
   has_one :detail

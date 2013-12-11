@@ -1,7 +1,14 @@
 HeyThatsNotOkCupid::Application.routes.draw do
-  resources :users
-  resources :profiles
-  resources :details
+  resources :users, only: [:show, :create, :new, :edit] do
+    member do
+      resource :profile, only: [:show, :create, :new, :edit]
+      resource :detail, only: [:show, :create, :new, :edit]
+    end
+  end
+
+  resource :session, only: [:create, :destroy, :new]
+
+  root to: "users#show" # figure out what to do for this
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
