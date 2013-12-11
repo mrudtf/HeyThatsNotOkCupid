@@ -6,4 +6,13 @@
 
 <body>
   <!-- add photo -->
+
+  <h1><%= @user.name %></h1>
+  <h2><%= @user.profile.age %> / <%= @user.profile.gender %>
+    / <%= @user.profile.orientation %></h2>
+  <h2><%= @user.profile.location %></h2>
+
+  <!-- add map -->
+
+  render "profile", profile: <%= @user.profile %>
 </body>

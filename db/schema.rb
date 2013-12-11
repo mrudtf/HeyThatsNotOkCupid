@@ -11,24 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131211201059) do
+ActiveRecord::Schema.define(:version => 20131211221757) do
 
   create_table "details", :force => true do |t|
     t.integer  "user_id",    :null => false
     t.string   "last_on"
-    t.integer  "height"
-    t.integer  "body_type"
-    t.integer  "diet"
-    t.integer  "smokes"
-    t.integer  "drinks"
-    t.integer  "drugs"
-    t.integer  "religion"
-    t.integer  "sign"
-    t.integer  "education"
-    t.integer  "job"
-    t.integer  "income"
-    t.integer  "offspring"
-    t.integer  "pets"
+    t.string   "height"
+    t.string   "body_type"
+    t.string   "diet"
+    t.string   "smokes"
+    t.string   "drinks"
+    t.string   "drugs"
+    t.string   "religion"
+    t.string   "sign"
+    t.string   "education"
+    t.string   "job"
+    t.string   "offspring"
+    t.string   "pets"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
