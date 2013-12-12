@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to user_url(current_user)
     else
-      render :json => @user.errors.full_messages
+      render :json => @profile.errors.full_messages
     end
   end
 end

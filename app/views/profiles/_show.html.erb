@@ -1,0 +1,18 @@
+<h4>About</h4>
+
+<% unless profile.summary.empty? %>
+  <h5>My self-summary</h5>
+  <p><%= profile.summary %></p>
+<% end %>
+
+<% unless profile.job.empty? %>
+<h5>What I'm doing with my life</h5>
+<p><%= profile.job %></p>
+<% end %>
+
+<% unless profile.likes.empty? %>
+<h5>Favorite books, movies, shows, music, and food</h5>
+<p><%= profile.likes %></p>
+<% end %>
+
+<p>Looking for <%= looking_for %> aged <%= profile.min_age %> to <%= profile.max_age %></p>

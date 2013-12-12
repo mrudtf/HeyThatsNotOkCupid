@@ -1,7 +1,13 @@
 <head>
-  <%= @user.name %>
 </head>
 
 <body>
-  <h1>Welcome!</h1>
+   <h2><%= @user.name %></h2>
+   <h3><%= @user.profile.age %> / <%= @user.profile.gender %> /
+     <%= @user.profile.orientation %></h3>
+     <!-- Add miles away -->
+   <h3><%= @user.profile.location %> (--- Miles Away)</h3>
+
+   <%= render "profiles/show", profile: @user.profile %>
+   <%= render "details/show", detail: @user.detail %>
 </body>

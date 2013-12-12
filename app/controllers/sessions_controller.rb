@@ -17,6 +17,10 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    current_detail = current_user.detail
+    current_detail.last_on = Time.now
+    current_detail.save
+
     logout_current_user!
     redirect_to new_session_url
   end

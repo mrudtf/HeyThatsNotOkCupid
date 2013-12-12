@@ -1,5 +1,8 @@
-<form action="new_submit" method="get">
-  <input type="hidden" name="detail[user_id]" value="current_user.id">
+<h1>Details</h1>
+
+<form action="<%= detail_url(current_user) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="detail[user_id]" value="<%= current_user.id %>">
 
   <p><label for="detail_height">Height (inches)</label>
     <input type="number" name="detail[height]" value="" id="detail_height"></p>
@@ -124,7 +127,7 @@
       </select>
     </p>
 
-    <p><label for="detail_offspring">Offspring</label>
+    <p><label for="detail_offspring">Kids</label>
       <select name="detail[offspring]" id="detail_offspring">
         <option></option>
         <option value="Doesn't want kids">Doesn't want kids</option>

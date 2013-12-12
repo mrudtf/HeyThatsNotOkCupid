@@ -1,3 +1,6 @@
 - write inclusion validations for dropdowns
 - figure out root (and its route)
 - logout
+- add profile/detail uniqueness constraints
+- add age min
+- ask if you broke MVC with looking_for
