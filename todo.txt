@@ -5,6 +5,8 @@
 - ask about proper place to store constants
 - add flash
 
+## always use rails helpers for img, JS, CSS
+
 1. MAKE SURE CONVERSATIONS ARE UNIQUE:
  - add constraints/validations
  - add partial message new to conversation show

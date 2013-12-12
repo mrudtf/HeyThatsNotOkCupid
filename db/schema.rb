@@ -11,14 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212035409) do
+ActiveRecord::Schema.define(:version => 20131212143231) do
 
   create_table "conversations", :force => true do |t|
-    t.integer  "initiator_id"
-    t.integer  "receiver_id"
+    t.integer  "low_user_id"
+    t.integer  "high_user_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
   end
+
+  add_index "conversations", ["high_user_id"], :name => "index_conversations_on_high_user_id"
+  add_index "conversations", ["low_user_id", "high_user_id"], :name => "index_conversations_on_low_user_id_and_high_user_id", :unique => true
+  add_index "conversations", ["low_user_id"], :name => "index_conversations_on_low_user_id"
 
   create_table "details", :force => true do |t|
     t.integer  "user_id",    :null => false

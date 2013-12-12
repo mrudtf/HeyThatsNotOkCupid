@@ -4,19 +4,21 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(params[:message])
-    @message.sender_id = current_user.id
-    @message.receiver_id = params[:user_id]
-
-    if @message.save
-      @conversation = Conversation.new(initiator_id: current_user.id,
-       receiver_id: params[:user_id])
-      @conversation.save!
-      @message.conversation_id = @conversation.id
-      @message.save!
-      redirect_to conversation_url(@conversation)
+    if current_user.id < params[:user_id].to_i
+      low_id = current_user.id
+      high_id = params[:user_id].to_i
     else
-      render :new # add error msg
+      low_id = params[:user_id].to_i
+      high_id = current_user.id
     end
+
+    @conversation = Conversation.find_or_create_by_ids(low_id, high_id)
+    params[:message][:sender_id] = current_user.id
+    params[:message][:receiver_id] = params[:user_id]
+    @message = @conversation.messages.new(params[:message])
+
+    @conversation.save # add error checking
+
+    redirect_to conversation_url(@conversation)
   end
 end
