@@ -47,22 +47,24 @@
      id="profile_zip">
   </p>
 
+  <p><label for="profile_summary">About me</label></p>
   <p>
-    <label for="profile_summary">About me</label>
-    <input type="textarea" name="profile[summary]" value="<%= profile.summary %>"
-     id="profile_summary">
+    <textarea rows="7" cols="50" name="profile[summary]"
+     id="profile_summary"><%= profile.summary %></textarea>
   </p>
 
+
+  <p><label for="profile_job">What I'm doing</label></p>
   <p>
-    <label for="profile_job">What I'm doing</label>
-    <input type="textarea" name="profile[job]" value="<%= profile.job %>"
-     id="profile_job">
+    <textarea rows="7" cols="50" name="profile[job]"
+     id="profile_job"><%= profile.job %></textarea>
   </p>
 
+  <p><label for="profile_likes">Favorite books, movies, shows, music, and
+    food</label></p>
   <p>
-    <label for="profile_likes">Favorite books, movies, shows, music, and food</label>
-    <input type="textarea" name="profile[likes]" value="<%= profile.likes %>"
-     id="profile_likes">
+    <textarea rows="7" cols="50" name="profile[likes]"
+     id="profile_likes"><%= profile.likes %></textarea>
   </p>
 
   <p>

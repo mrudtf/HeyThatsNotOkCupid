@@ -1,1 +1,10 @@
-<h1>Conversation Show Page</h1>
+<h1>Conversation</h1>
+
+<% @messages.each do |message| %>
+<h3>From <%= link_to message.sender.name, user_url(message.sender) %> to
+  <%= link_to message.receiver.name, user_url(message.receiver) %> at
+  <%= message.created_at %></h3>
+<p><%= message.body %></p>
+<% end %>
+
+<%= render "messages/new", recipient: @recipient %>

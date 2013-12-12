@@ -6,6 +6,28 @@ class Detail < ActiveRecord::Base
 
   validates :user_id, presence: true, uniqueness: true
   validates :last_on, presence: true
+  validates :height, numericality: { less_than: 96, greater_than: 36 }
+
+  ACCEPTABLES = { body_type: ["Thin", "Overweight", "Average", "Fit"], diet:
+    ["Anything", "Vegetarian", "Vegan", "Kosher", "Halal", "Other"], smokes:
+    ["Yes", "No", "When drinking", "Trying to quit"], drinks: ["Often",
+    "Socially", "Sometimes", "Rarely", "Never"], drugs: ["Often",
+    "Sometimes", "Rarely", "Never"], religion: ["Agnosticism", "Atheism",
+    "Buddhism", "Christianity", "Hinduism", "Islam", "Judaism", "Other"], sign:
+    ["Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo",
+    "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn"], education:
+    ["Grade School", "High School", "College", "Graduate School"], job:
+    ["Student", "Administrative", "Artist", "Banking", "Computer",
+    "Construction", "Education", "Hospitality", "Legal", "Management",
+    "Media", "Medicine", "Military", "Political", "Sales", "Science",
+    "Unemployed", "Retired", "Other"], offspring: ["Doesn't want kids",
+    "Doesn't have kids, but wants them", "Has kids"], pets: ["Likes cats",
+    "Likes dogs", "Likes cats and dogs"] }
+
+  [:body_type, :diet, :smokes, :drinks, :drugs, :religion, :sign, :education,
+     :job, :offspring, :pets].each do |attr|
+    validates attr, inclusion: { in: ACCEPTABLES[attr] }, allow_blank: true
+  end
 
   belongs_to :user
 

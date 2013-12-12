@@ -8,7 +8,8 @@ class ProfilesController < ApplicationController
     if @profile.save
       redirect_to new_detail_url(current_user)
     else
-      render :json => @profile.errors.full_messages
+      flash[:errors] = @profile.errors.full_messages
+      render :new
     end
   end
 
@@ -27,8 +28,12 @@ class ProfilesController < ApplicationController
 
   def update
     @profile = current_user.profile
-    @profile.update_attributes(params[:profile])
 
-    redirect_to user_url(current_user)
+    if @profile.update_attributes(params[:profile])
+      redirect_to user_url(current_user)
+    else
+      flash[:errors] = @profile.errors.full_messages
+      render :edit
+    end
   end
 end

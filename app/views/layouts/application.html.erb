@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <p><%= error %></p>
+    <% end %>
+  <% end %>
+
   <% if current_user %>
+    Logged in as <%= current_user.name %>
     <%= button_to "Log Out", "/session", method: "delete" %>
   <% end %>
 

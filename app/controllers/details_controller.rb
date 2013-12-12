@@ -8,7 +8,8 @@ class DetailsController < ApplicationController
     if @detail.save
       redirect_to user_url(current_user)
     else
-      render :json => @detail.errors.full_messages
+      flash[:errors] = @detail.errors.full_messages
+      render :new
     end
   end
 
@@ -27,8 +28,12 @@ class DetailsController < ApplicationController
 
   def update
     @detail = current_user.detail
-    @detail.update_attributes(params[:detail])
 
-    redirect_to user_url(current_user)
+    if @detail.update_attributes(params[:detail])
+      redirect_to user_url(current_user)
+    else
+      flash[:errors] = @detail.errors.full_messages
+      render :edit
+    end
   end
 end
