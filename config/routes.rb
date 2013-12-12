@@ -1,8 +1,8 @@
 HeyThatsNotOkCupid::Application.routes.draw do
-  resources :users, only: [:show, :create, :new, :edit] do
+  resources :users, except: [:index] do
     member do
-      resource :profile, only: [:show, :create, :new, :edit]
-      resource :detail, only: [:show, :create, :new, :edit]
+      resource :profile, except: [:destroy]
+      resource :detail, except: [:destroy]
     end
   end
 

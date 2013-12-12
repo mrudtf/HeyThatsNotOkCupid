@@ -1,0 +1,82 @@
+<h1>Profile</h1>
+
+<form action="<%= profile_url(current_user) %>" method="post">
+  <% if editing %>
+    <input type='hidden' name='_method' value='put'>
+  <% end %>
+  <input type="hidden" name="profile[user_id]" value="<%= current_user.id %>">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+  <p>
+    <label for="profile_age">Age</label>
+    <input type="number" name="profile[age]" value="<%= profile.age %>" id="profile_age">
+  </p>
+
+  <p>
+    <label for="profile_gender">Gender</label>
+    <select name="profile[gender]" id="profile_gender">
+      <option></option>
+      <% ["M", "F"].each do |gender| %> <option value="<%= gender %>"
+        <%= "selected" if profile.gender == gender %>>
+        <%= gender %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="profile_orientation">Sexual Orientation</label>
+    <select name="profile[orientation]" id="profile_orientation">
+      <option></option>
+      <% ["Straight", "Gay", "Bisexual", "Other"].each do |orientation| %>
+      <option value="<%= orientation %>"
+        <%= "selected" if profile.orientation == orientation %>>
+        <%= orientation %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="profile_location">Location</label>
+    <input type="text" name="profile[location]" value="<%= profile.location %>"
+     id="profile_location">
+  </p>
+
+  <p>
+    <label for="profile_zip">ZIP</label>
+    <input type="number" name="profile[zip]" value="<%= profile.zip %>"
+     id="profile_zip">
+  </p>
+
+  <p>
+    <label for="profile_summary">About me</label>
+    <input type="textarea" name="profile[summary]" value="<%= profile.summary %>"
+     id="profile_summary">
+  </p>
+
+  <p>
+    <label for="profile_job">What I'm doing</label>
+    <input type="textarea" name="profile[job]" value="<%= profile.job %>"
+     id="profile_job">
+  </p>
+
+  <p>
+    <label for="profile_likes">Favorite books, movies, shows, music, and food</label>
+    <input type="textarea" name="profile[likes]" value="<%= profile.likes %>"
+     id="profile_likes">
+  </p>
+
+  <p>
+    <label for="profile_min_age">I'm interested in people </label>
+    <input type="number" name="profile[min_age]" value="<%= profile.min_age %>"
+      id="profile_min_age">
+    <label for="profile_max_age">to </label>
+    <input type="number" name="profile[max_age]" value="<%= profile.max_age %>"
+      id="profile_max_age"> years old,
+    <label for="profile_max_distance">living up to </label>
+    <input type="number" name="profile[max_distance]"
+      value="<%= profile.max_distance %>" id="profile_max_distance">
+    miles away
+  </p>
+
+  <p><input type="submit" value="Ok!"></p>
+</form>

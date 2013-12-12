@@ -1,0 +1,157 @@
+<h1>Details</h1>
+
+<form action="<%= detail_url(current_user) %>" method="post">
+  <% if editing %>
+    <input type='hidden' name='_method' value='put'>
+  <% end %>
+
+  <input type="hidden" name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <input type="hidden" name="detail[user_id]" value="<%= current_user.id %>">
+
+  <p>
+    <label for="detail_height">Height (inches)</label>
+    <input type="number" name="detail[height]" value="<%= detail.height %>"
+       id="detail_height">
+  </p>
+
+  <p>
+    <label for="detail_body_type">Body Type</label>
+    <select name="detail[body_type]" id="detail_body_type">
+      <option></option>
+      <% ["Thin", "Overweight", "Average", "Fit"].each do |body_type| %>
+          <option value="<%= body_type %>"
+            <%= "selected" if detail.body_type == body_type %>>
+            <%= body_type %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="detail_diet">Diet</label>
+    <select name="detail[diet]" id="detail_diet">
+      <option></option>
+      <% ["Anything", "Vegetarian", "Vegan", "Kosher", "Halal",
+          "Other"].each do |diet| %>
+          <option value="<%= diet %>"
+            <%= "selected" if detail.diet == diet %>>
+            <%= diet %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="detail_smokes">Smokes</label>
+    <select name="detail[smokes]" id="detail_smokes">
+      <option></option>
+      <% ["Yes", "No", "When drinking", "Trying to quit"].each do |smokes| %>
+          <option value="<%= smokes %>"
+            <%= "selected" if detail.smokes == smokes %>>
+            <%= smokes %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="detail_drinks">Drinks</label>
+    <select name="detail[drinks]" id="detail_drinks">
+      <option></option>
+      <% ["Often", "Socially", "Sometimes", "Rarely", "Never"].each do |drinks| %>
+          <option value="<%= drinks %>"
+            <%= "selected" if detail.drinks == drinks %>>
+            <%= drinks %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="detail_drugs">Drugs</label>
+    <select name="detail[drugs]" id="detail_drugs">
+      <option></option>
+      <% ["Often", "Sometimes", "Rarely", "Never"].each do |drugs| %>
+          <option value="<%= drugs %>"
+            <%= "selected" if detail.drugs == drugs %>>
+            <%= drugs %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="detail_religion">Religion</label>
+    <select name="detail[religion]" id="detail_religion">
+      <option></option>
+      <% ["Agnosticism", "Atheism", "Buddhism", "Christianity", "Hinduism",
+          "Islam", "Judaism", "Other"].each do |religion| %>
+          <option value="<%= religion %>"
+            <%= "selected" if detail.religion == religion %>>
+            <%= religion %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p><label for="detail_sign">Sign</label>
+    <select name="detail[sign]" id="detail_sign">
+      <option></option>
+      <% ["Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo",
+          "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn"].each do |sign| %>
+          <option value="<%= sign %>"
+            <%= "selected" if detail.sign == sign %>>
+            <%= sign %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="detail_education">Education Completed</label>
+    <select name="detail[education]" id="detail_education">
+      <option></option>
+      <% ["Grade School", "High School", "College",
+          "Graduate School"].each do |education| %>
+          <option value="<%= education %>"
+            <%= "selected" if detail.education == education %>>
+            <%= education %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="detail_job">Job</label>
+    <select name="detail[job]" id="detail_job">
+      <option></option>
+      <% ["Student", "Administrative", "Artist", "Banking", "Computer",
+        "Construction", "Education", "Hospitality", "Legal", "Management",
+        "Media", "Medicine", "Military", "Political", "Sales", "Science",
+        "Unemployed", "Retired", "Other"].each do |job| %>
+          <option value="<%= job %>" <%= "selected" if detail.job == job %>>
+            <%= job %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="detail_offspring">Kids</label>
+    <select name="detail[offspring]" id="detail_offspring">
+      <option></option>
+      <% ["Doesn't want kids", "Doesn't have kids, but wants them",
+          "Has kids"].each do |offspring| %>
+          <option value="<%= offspring %>"
+            <%= "selected" if detail.offspring == offspring %>>
+            <%= offspring %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p>
+    <label for="detail_pets">Pets</label>
+    <select name="detail[pets]" id="detail_pets">
+      <option></option>
+      <% ["Likes cats", "Likes dogs", "Likes cats and dogs"].each do |pets| %>
+          <option value="<%= pets %>"
+            <%= "selected" if detail.pets == pets %>>
+            <%= pets %></option>
+      <% end %>
+    </select>
+  </p>
+
+  <p><input type="submit" value="Ok!"></p>
+</form>

@@ -1,0 +1,148 @@
+<h1>Details</h1>
+
+<form action="<%= detail_url(current_user) %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="detail[user_id]" value="<%= current_user.id %>">
+
+  <p><label for="detail_height">Height (inches)</label>
+    <input type="number" name="detail[height]" value="" id="detail_height"></p>
+
+  <p><label for="detail_body_type">Body Type</label>
+    <select name="detail[body_type]" id="detail_body_type">
+      <option></option>
+      <option value="Thin">Thin</option>
+      <option value="Overweight">Overweight</option>
+      <option value="Average">Average</option>
+      <option value="Fit">Fit</option>
+    </select>
+  </p>
+
+    <p><label for="detail_diet">Diet</label>
+      <select name="detail[diet]" id="detail_diet">
+        <option></option>
+        <option value="Anything">Anything</option>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Vegan">Vegan</option>
+        <option value="Kosher">Kosher</option>
+        <option value="Halal">Halal</option>
+        <option value="Other">Other</option>
+      </select>
+    </p>
+
+    <p><label for="detail_smokes">Smokes</label>
+      <select name="detail[smokes]" id="detail_smokes">
+        <option></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+        <option value="When drinking">When drinking</option>
+        <option value="Trying to quit">Trying to quit</option>
+      </select>
+    </p>
+
+    <p><label for="detail_drinks">Drinks</label>
+      <select name="detail[drinks]" id="detail_drinks">
+        <option></option>
+        <option value="Often">Often</option>
+        <option value="Socially">Socially</option>
+        <option value="Sometimes">Sometimes</option>
+        <option value="Rarely">Rarely</option>
+        <option value="Never">Never</option>
+      </select>
+    </p>
+
+    <p><label for="detail_drugs">Drugs</label>
+      <select name="detail[drugs]" id="detail_drugs">
+        <option></option>
+        <option value="Often">Often</option>
+        <option value="Sometimes">Sometimes</option>
+        <option value="Rarely">Rarely</option>
+        <option value="Never">Never</option>
+      </select>
+    </p>
+
+    <p><label for="detail_religion">Religion</label>
+      <select name="detail[religion]" id="detail_religion">
+        <option></option>
+        <option value="Agnosticism">Agnosticism</option>
+        <option value="Atheism">Atheism</option>
+        <option value="Buddhism">Buddhism</option>
+        <option value="Christianity">Christianity</option>
+        <option value="Hinduism">Hinduism</option>
+        <option value="Islam">Islam</option>
+        <option value="Judaism">Judaism</option>
+        <option value="Other">Other</option>
+      </select>
+    </p>
+
+    <p><label for="detail_sign">Sign</label>
+      <select name="detail[sign]" id="detail_sign">
+        <option></option>
+        <option value="Aquarius">Aquarius</option>
+        <option value="Pisces">Pisces</option>
+        <option value="Aries">Aries</option>
+        <option value="Taurus">Taurus</option>
+        <option value="Gemini">Gemini</option>
+        <option value="Cancer">Cancer</option>
+        <option value="Leo">Leo</option>
+        <option value="Virgo">Virgo</option>
+        <option value="Libra">Libra</option>
+        <option value="Scorpio">Scorpio</option>
+        <option value="Sagittarius">Sagittarius</option>
+        <option value="Capricorn">Capricorn</option>
+      </select>
+    </p>
+
+    <p><label for="detail_education">Education Completed</label>
+      <select name="detail[education]" id="detail_education">
+        <option></option>
+        <option value="Grade School">Grade School</option>
+        <option value="High School">High School</option>
+        <option value="College">College</option>
+        <option value="Graduate School">Graduate School</option>
+      </select>
+    </p>
+
+    <p><label for="detail_job">Job</label>
+      <select name="detail[job]" id="detail_job">
+        <option></option>
+        <option value="Student">Student</option>
+        <option value="Administrative">Administrative</option>
+        <option value="Artist">Artist</option>
+        <option value="Banking">Banking</option>
+        <option value="Computer">Computer</option>
+        <option value="Construction">Construction</option>
+        <option value="Education">Education</option>
+        <option value="Hospitality">Hospitality</option>
+        <option value="Legal">Legal</option>
+        <option value="Management">Management</option>
+        <option value="Media">Media</option>
+        <option value="Medicine">Medicine</option>
+        <option value="Military">Military</option>
+        <option value="Political">Political</option>
+        <option value="Sales">Sales</option>
+        <option value="Science">Science</option>
+        <option value="Unemployed">Unemployed</option>
+        <option value="Retired">Retired</option>
+        <option value="Other">Other</option>
+      </select>
+    </p>
+
+    <p><label for="detail_offspring">Kids</label>
+      <select name="detail[offspring]" id="detail_offspring">
+        <option></option>
+        <option value="Doesn't want kids">Doesn't want kids</option>
+        <option value="Doesn't have kids, but wants them">Doesn't have kids, but wants them</option>
+        <option value="Has kids">Has kids</option>
+      </select>
+    </p>
+
+    <p><label for="detail_pets">Pets</label>
+      <select name="detail[pets]" id="detail_pets">
+        <option></option>
+        <option value="Likes cats">Likes cats</option>
+        <option value="Likes dogs">Likes dogs</option>
+        <option value="Likes cats and dogs">Likes cats and dogs</option>
+      </select>
+    </p>
+  <p><input type="submit" value="Ok!"></p>
+</form>

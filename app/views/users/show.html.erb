@@ -9,5 +9,12 @@
    <h3><%= @user.profile.location %> (--- Miles Away)</h3>
 
    <%= render "profiles/show", profile: @user.profile %>
+   <% if @user = current_user %>
+     <%= link_to "Edit Profile", edit_profile_url(@user) %>
+   <% end %>
+
    <%= render "details/show", detail: @user.detail %>
+   <% if @user = current_user %>
+     <%= link_to "Edit Details", edit_detail_url(@user) %>
+   <% end %>
 </body>
