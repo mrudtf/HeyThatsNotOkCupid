@@ -45,11 +45,3 @@ test:
   pool: 5
   username: appacademy
   password:
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: HeyThatsNotOkCupid_production
-  pool: 5
-  username: appacademy
-  password:

@@ -1,5 +1,5 @@
 HeyThatsNotOkCupid::Application.routes.draw do
-  resources :users, except: [:index] do
+  resources :users do
     member do
       resource :profile
       resource :detail

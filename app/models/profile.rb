@@ -13,8 +13,7 @@ class Profile < ActiveRecord::Base
   validates :max_distance, inclusion: { in: 0..12455, message: "is too big for
      even love to conquer" }
   validates :gender, inclusion: { in: ["M", "F"] }
-  validates :orientation, inclusion: { in: ["Straight", "Gay", "Bisexual",
-     "Other"] }
+  validates :orientation, inclusion: { in: ["Straight", "Gay", "Bisexual"] }
 
   belongs_to :user
 

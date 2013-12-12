@@ -27,7 +27,7 @@
     <label for="profile_orientation">Sexual Orientation</label>
     <select name="profile[orientation]" id="profile_orientation">
       <option></option>
-      <% ["Straight", "Gay", "Bisexual", "Other"].each do |orientation| %>
+      <% ["Straight", "Gay", "Bisexual"].each do |orientation| %>
       <option value="<%= orientation %>"
         <%= "selected" if profile.orientation == orientation %>>
         <%= orientation %></option>
