@@ -12,6 +12,21 @@ class User < ActiveRecord::Base
   has_one :profile
   has_one :detail
   has_many :photos
+  has_many :conversations
+
+  has_many(
+    :sent_messages,
+    class_name: "Messages",
+    foreign_key: :sender_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :received_messages,
+    class_name: "Messages",
+    foreign_key: :receiver_id,
+    primary_key: :id
+  )
 
   def self.find_by_credentials(name, password)
     user = User.find_by_name(name)

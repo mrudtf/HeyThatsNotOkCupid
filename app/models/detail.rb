@@ -7,6 +7,8 @@ class Detail < ActiveRecord::Base
   validates :user_id, presence: true, uniqueness: true
   validates :last_on, presence: true
 
+  belongs_to :user
+
   private
   def set_last_login
     self.last_on ||= Time.now

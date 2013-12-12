@@ -1,5 +1,6 @@
 class DetailsController < ApplicationController
-  before_filter :require_correct_user!, only: [:create, :edit, :new, :update]
+  before_filter :require_correct_user!, only: [:create, :edit, :new, :update,
+     :destroy]
 
   def create
     @detail = Detail.new(params[:detail])

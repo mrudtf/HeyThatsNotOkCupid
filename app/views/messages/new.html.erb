@@ -1,0 +1,9 @@
+<h1>New Message to <%= @user.name %></h1>
+
+<form action="<%= user_messages_url %>" method="post">
+  <input type="hidden" name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <label for="message_body">Message:</label><textarea name="message[body]"
+    rows="5" cols="40" id="message_body"></textarea>
+  <p><input type="submit" value="Send"></p>
+</form>

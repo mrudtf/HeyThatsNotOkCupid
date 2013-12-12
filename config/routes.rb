@@ -1,10 +1,13 @@
 HeyThatsNotOkCupid::Application.routes.draw do
   resources :users, except: [:index] do
     member do
-      resource :profile, except: [:destroy]
-      resource :detail, except: [:destroy]
+      resource :profile
+      resource :detail
     end
+    resources :messages, only: [:create, :new]
   end
+
+  resources :conversations, only: [:index, :create, :show, :destroy]
 
   resource :session, only: [:create, :destroy, :new]
 

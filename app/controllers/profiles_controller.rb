@@ -1,5 +1,6 @@
 class ProfilesController < ApplicationController
-  before_filter :require_correct_user!, only: [:create, :edit, :new]
+  before_filter :require_correct_user!, only: [:create, :edit, :new, :update,
+     :destroy]
 
   def create
     @profile = Profile.new(params[:profile])

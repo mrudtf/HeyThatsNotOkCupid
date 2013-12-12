@@ -4,3 +4,9 @@
 - ask if you broke MVC with looking_for
 - ask about proper place to store constants
 - add flash
+
+1. MAKE SURE CONVERSATIONS ARE UNIQUE:
+ - add constraints/validations
+ - add partial message new to conversation show
+ - redirect to conversation show if you try to make a new message and conv exists
+ - consider conv model carefully to make sure you can find them regardless of initiator

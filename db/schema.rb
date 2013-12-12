@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212003403) do
+ActiveRecord::Schema.define(:version => 20131212035409) do
+
+  create_table "conversations", :force => true do |t|
+    t.integer  "initiator_id"
+    t.integer  "receiver_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "details", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -30,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20131212003403) do
     t.string   "pets"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "messages", :force => true do |t|
+    t.integer  "conversation_id"
+    t.string   "body"
+    t.integer  "sender_id"
+    t.integer  "receiver_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "profiles", :force => true do |t|
