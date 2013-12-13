@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212143231) do
+ActiveRecord::Schema.define(:version => 20131212221027) do
 
   create_table "conversations", :force => true do |t|
     t.integer  "low_user_id"
@@ -54,13 +54,10 @@ ActiveRecord::Schema.define(:version => 20131212143231) do
 
   create_table "profiles", :force => true do |t|
     t.integer  "user_id",      :null => false
-    t.integer  "age"
-    t.string   "gender"
-    t.string   "orientation"
     t.string   "location"
-    t.string   "summary"
-    t.string   "job"
-    t.string   "likes"
+    t.text     "summary"
+    t.text     "job"
+    t.text     "likes"
     t.integer  "min_age"
     t.integer  "max_age"
     t.integer  "max_distance"
@@ -75,6 +72,9 @@ ActiveRecord::Schema.define(:version => 20131212143231) do
     t.string   "token"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.string   "gender"
+    t.string   "orientation"
+    t.integer  "age"
   end
 
 end

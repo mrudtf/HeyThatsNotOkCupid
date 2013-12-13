@@ -1,0 +1,7 @@
+<h1>Matches</h1>
+
+<% @users.each do |user| %>
+  <h2><%= link_to user.name, user_url(user) %></h2>
+  <h3><%= user.age %> / <%= user.gender %> / <%= user.orientation %></h3>
+  <h3><%= user.profile.location %> (--- Miles Away)</h3>
+<% end %>

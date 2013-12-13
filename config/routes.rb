@@ -11,7 +11,7 @@ HeyThatsNotOkCupid::Application.routes.draw do
 
   resource :session, only: [:create, :destroy, :new]
 
-  root to: "users#show" # figure out what to do for this
+  root to: "users#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

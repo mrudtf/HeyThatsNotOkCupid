@@ -8,34 +8,6 @@
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
   <p>
-    <label for="profile_age">Age</label>
-    <input type="number" name="profile[age]" value="<%= profile.age %>" id="profile_age">
-  </p>
-
-  <p>
-    <label for="profile_gender">Gender</label>
-    <select name="profile[gender]" id="profile_gender">
-      <option></option>
-      <% ["M", "F"].each do |gender| %> <option value="<%= gender %>"
-        <%= "selected" if profile.gender == gender %>>
-        <%= gender %></option>
-      <% end %>
-    </select>
-  </p>
-
-  <p>
-    <label for="profile_orientation">Sexual Orientation</label>
-    <select name="profile[orientation]" id="profile_orientation">
-      <option></option>
-      <% ["Straight", "Gay", "Bisexual"].each do |orientation| %>
-      <option value="<%= orientation %>"
-        <%= "selected" if profile.orientation == orientation %>>
-        <%= orientation %></option>
-      <% end %>
-    </select>
-  </p>
-
-  <p>
     <label for="profile_location">Location</label>
     <input type="text" name="profile[location]" value="<%= profile.location %>"
      id="profile_location">

@@ -1,4 +1,7 @@
 class ConversationsController < ApplicationController
+  def index
+
+  end
 
   def show
     @conversation = Conversation.includes(:messages).find(params[:id])

@@ -28,6 +28,6 @@ class UsersController < ApplicationController
   end
 
   def index
-
+    @users = filter_index
   end
 end
