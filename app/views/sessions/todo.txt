@@ -7,8 +7,12 @@
 
 ## always use rails helpers for img, JS, CSS
 
-1. MAKE SURE CONVERSATIONS ARE UNIQUE:
- - add constraints/validations
- - add partial message new to conversation show
- - redirect to conversation show if you try to make a new message and conv exists
- - consider conv model carefully to make sure you can find them regardless of initiator
+- figure out a way to not constantly hammer the db via current_user
+- collect and fix before_filters for proper users
+
+Features:
+- Anything location-based
+- Questions
+- Matching
+- Photos
+- New message notification (read messages?)

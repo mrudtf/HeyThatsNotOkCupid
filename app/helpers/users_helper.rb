@@ -29,6 +29,8 @@ module UsersHelper
        ["Straight", "Bisexual"])
     end
 
-    people - [current_user]
+    people.where("age >= :min_age AND age <= :max_age",
+    {min_age: current_user.profile.min_age,
+     max_age: current_user.profile.max_age}) - [current_user]
   end
 end
