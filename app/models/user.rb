@@ -15,7 +15,26 @@ class User < ActiveRecord::Base
 
   has_one :profile
   has_one :detail
-  has_many :photos
+  has_many :photos # add this
+  has_many :responses
+
+  has_many(
+    :answered_questions,
+    through: :responses,
+    source: :question
+  )
+
+  has_many(
+    :ok_responses,
+    through: :responses,
+    source: :ok_responses
+  )
+
+  has_many(
+    :ok_answers,
+    through: :responses,
+    source: :ok_answers
+  )
 
   has_many(
     :conversations_as_lower_user_id,

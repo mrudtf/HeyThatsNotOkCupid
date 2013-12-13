@@ -1,5 +1,6 @@
 class Response < ActiveRecord::Base
-  attr_accessible :answer_id, :explanation, :importance, :question_id, :user_id
+  attr_accessible :answer_id, :explanation, :importance, :question_id, :user_id,
+    :ok_answer_ids
 
   validates :answer_id, :importance, :question_id, :user_id, presence: true
 
@@ -8,4 +9,10 @@ class Response < ActiveRecord::Base
   belongs_to :answer
 
   has_many :ok_responses
+
+  has_many(
+    :ok_answers,
+    through: :ok_responses,
+    source: :answer
+  )
 end

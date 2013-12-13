@@ -5,9 +5,11 @@ HeyThatsNotOkCupid::Application.routes.draw do
       resource :detail
     end
     resources :messages, only: [:create, :new]
+    resources :responses
   end
 
   resources :conversations, only: [:index, :create, :show, :destroy]
+  resources :questions #don't leave this
 
   resource :session, only: [:create, :destroy, :new]
 
