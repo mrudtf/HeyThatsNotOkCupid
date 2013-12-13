@@ -1,0 +1,29 @@
+<h1>Conversations</h1>
+<h2>Received</h2>
+
+<% @conversations.each do |convo| %>
+  <% message = convo.messages.order("created_at DESC").find do %>
+    <% |msg| msg.receiver_id == current_user.id %>
+  <% end %>
+
+   <% next if message.nil? %>
+
+   <h3><%= link_to message.sender.name, conversation_url(convo) %></h3>
+   <p><%= message.body %></p>
+
+<% end %>
+
+<br>
+<h2>Sent</h2>
+
+<% @conversations.each do |convo| %>
+  <% message = convo.messages.order("created_at DESC").find do %>
+    <% |msg| msg.sender_id == current_user.id %>
+  <% end %>
+
+   <% next if message.nil? %>
+
+   <h3><%= link_to message.receiver.name, conversation_url(convo) %></h3>
+   <p><%= message.body %></p>
+
+<% end %>
