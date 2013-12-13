@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212221027) do
+ActiveRecord::Schema.define(:version => 20131213195046) do
+
+  create_table "answers", :force => true do |t|
+    t.integer  "question_id"
+    t.string   "body",        :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "conversations", :force => true do |t|
     t.integer  "low_user_id"
@@ -52,6 +59,15 @@ ActiveRecord::Schema.define(:version => 20131212221027) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "ok_responses", :force => true do |t|
+    t.integer  "response_id", :null => false
+    t.integer  "answer_id",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "ok_responses", ["response_id"], :name => "index_ok_responses_on_response_id"
+
   create_table "profiles", :force => true do |t|
     t.integer  "user_id",      :null => false
     t.string   "location"
@@ -65,6 +81,24 @@ ActiveRecord::Schema.define(:version => 20131212221027) do
     t.datetime "updated_at",   :null => false
     t.integer  "zip",          :null => false
   end
+
+  create_table "questions", :force => true do |t|
+    t.string   "body",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "responses", :force => true do |t|
+    t.integer  "user_id",     :null => false
+    t.integer  "question_id", :null => false
+    t.integer  "answer_id",   :null => false
+    t.integer  "importance",  :null => false
+    t.string   "explanation"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "responses", ["user_id", "question_id"], :name => "index_responses_on_user_id_and_question_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "name",            :null => false
