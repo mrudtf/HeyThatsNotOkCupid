@@ -1,5 +1,8 @@
 <h1>Questions</h1>
 
+<%= render "new", question: unanswered_question %>
+
+<h2>Already answered</h2>
 <% responses.each do |response| %>
   <p><strong><%= response.question.body %></strong></p>
   <p><%= response.answer.body %></p>

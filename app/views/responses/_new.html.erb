@@ -3,7 +3,7 @@
   <input type="hidden" name="response[question_id]" value="<%= question.id %>">
   <input type="hidden" name="response[user_id]" value="<%= current_user.id %>">
 
-  <!-- <h2><%= question.body %></h2> Already here from index -->
+  <h2><%= question.body %></h2>
   <% question.answers.each do |answer| %>
     <label for="response_answer_id">
     <p><input type="radio" name="response[answer_id]" value="<%= answer.id %>">
