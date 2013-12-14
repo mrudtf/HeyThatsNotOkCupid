@@ -1,0 +1,7 @@
+<h1>Questions</h1>
+
+<% responses.each do |response| %>
+  <p><strong><%= response.question.body %></strong></p>
+  <p><%= response.answer.body %></p>
+  <%= link_to "Re-answer", edit_response_url(response) %>
+<% end %>

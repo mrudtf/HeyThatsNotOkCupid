@@ -4,6 +4,8 @@
 - ask if you broke MVC with looking_for
 - ask about proper place to store constants
 - add flash
+- fix routes
+- figure out the irrelevant question issue (write a validation and remove irrelevant?)
 
 ## always use rails helpers for img, JS, CSS
 
@@ -16,3 +18,14 @@ Features:
 - Matching
 - Photos
 - New message notification (read messages?)
+
+
+Responses:
+- Show question title
+- Show their response, your response
+- Make a response new
+
+
+Actual Backbone layout:
+- Navs all around
+- On main page, tabs for About/Photo/Questions

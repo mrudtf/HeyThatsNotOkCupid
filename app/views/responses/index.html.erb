@@ -1,0 +1,6 @@
+<% if @user == current_user %>
+  <%= render "users_responses", responses: @responses %>
+<% else %>
+  <%= render "others_responses", responses: @responses, user: @user,
+    current_user: current_user %>
+<% end %>

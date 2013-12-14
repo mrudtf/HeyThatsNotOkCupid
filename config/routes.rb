@@ -5,12 +5,11 @@ HeyThatsNotOkCupid::Application.routes.draw do
       resource :detail
     end
     resources :messages, only: [:create, :new]
-    resources :responses
+    resources :responses, only: [:index]
   end
 
   resources :conversations, only: [:index, :create, :show, :destroy]
-  resources :questions #don't leave this
-
+  resources :responses, except: [:index]
   resource :session, only: [:create, :destroy, :new]
 
   root to: "users#index"
