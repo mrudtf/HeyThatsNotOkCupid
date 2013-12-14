@@ -29,3 +29,16 @@ Responses:
 Actual Backbone layout:
 - Navs all around
 - On main page, tabs for About/Photo/Questions
+
+
+Match algo in ActiveRecord:
+
+# iterate over this to reduce db querying? maybe?
+common_questions = me.answered_questions & you.answered_questions
+
+
+next unless you.answered_questions.include?(my_response.question)
+if my_response.ok_responses.ok_answers.include?(your_response.answer)
+  numerator += my_response.importance
+end
+denominator += my_response.importance
