@@ -63,12 +63,12 @@ HeyThatsNotOkCupid::Application.configure do
 
   # Paperclip with AWS S3
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => "okcproduction",
-      :access_key_id => "AKIAJKMVA5DWU4TFKO3Q",
-      :secret_access_key => "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",
-      :s3_host_name => 's3.amazonaws.com'
+    storage: :s3,
+    s3_credentials: {
+      bucket: "okcproduction",
+      access_key_id: ENV["S3_KEY"],
+      secret_access_key: ENV["S3_SECRET"],
+      s3_host_name: 's3.amazonaws.com'
     }
   }
 
