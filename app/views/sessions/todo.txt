@@ -19,7 +19,6 @@ Features:
 - Photos
 - New message notification (read messages?)
 
-
 Responses:
 - Show question title
 - Show their response, your response
@@ -42,3 +41,7 @@ if my_response.ok_responses.ok_answers.include?(your_response.answer)
   numerator += my_response.importance
 end
 denominator += my_response.importance
+
+Need matchbox on:
+- User show
+- matches

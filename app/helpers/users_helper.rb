@@ -56,10 +56,17 @@ module UsersHelper
       friend_denominator += response.importance
     end
 
-    match = 0 if match_denominator == 0
-    friend = 0 if friend_denominator == 0
-    match = (match_numerator * 100) / match_denominator
-    friend = (friend_numerator * 100) / friend_denominator
+    if match_denominator == 0
+      match = 0
+    else
+      match = (match_numerator * 100) / match_denominator
+    end
+
+    if friend_denominator == 0
+      friend = 0
+    else
+      friend = (friend_numerator * 100) / friend_denominator
+    end
 
     {match: match, friend: friend}
   end
