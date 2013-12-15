@@ -1,7 +1,6 @@
 class Conversation < ActiveRecord::Base
   attr_accessible :low_user_id, :high_user_id
 
-  validates :low_user_id, :high_user_id, presence: true
   validate :ids_are_correctly_ordered
 
   has_many :messages

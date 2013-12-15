@@ -33,4 +33,34 @@ module UsersHelper
     {min_age: current_user.profile.min_age,
      max_age: current_user.profile.max_age}) - [current_user]
   end
+
+  def match(other_user)
+    match_numerator, match_denominator, friend_numerator,
+      friend_denominator = 0, 0, 0, 0
+
+    current_user.responses.each do |response|
+      other_users_response =
+       other_user.responses.find_by_question_id(response.question)
+
+      next if other_users_response == nil
+
+      if response.ok_answers.include?(other_users_response.answer)
+        match_numerator += response.importance
+      end
+
+      if response.answer == other_users_response.answer
+        friend_numerator += response.importance
+      end
+
+      match_denominator += response.importance
+      friend_denominator += response.importance
+    end
+
+    match = 0 if match_denominator == 0
+    friend = 0 if friend_denominator == 0
+    match = (match_numerator * 100) / match_denominator
+    friend = (friend_numerator * 100) / friend_denominator
+
+    {match: match, friend: friend}
+  end
 end

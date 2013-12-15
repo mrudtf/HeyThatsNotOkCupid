@@ -1,7 +1,7 @@
 class Message < ActiveRecord::Base
   attr_accessible :conversation_id, :body, :sender_id, :receiver_id
 
-  validates :sender_id, :receiver_id, presence: true
+  validates :sender, :receiver, presence: true
 
   belongs_to :conversation
 

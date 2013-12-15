@@ -8,6 +8,7 @@ HeyThatsNotOkCupid::Application.routes.draw do
     resources :responses, only: [:index]
   end
 
+  resources :questions, only: [:new, :create]
   resources :conversations, only: [:index, :create, :show, :destroy]
   resources :responses, except: [:index]
   resource :session, only: [:create, :destroy, :new]

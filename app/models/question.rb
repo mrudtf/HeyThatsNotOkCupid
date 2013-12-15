@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  attr_accessible :body
+  attr_accessible :body, :answers
 
   validates :body, presence: true
 

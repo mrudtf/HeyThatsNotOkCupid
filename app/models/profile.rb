@@ -4,7 +4,7 @@ class Profile < ActiveRecord::Base
 
   validate :min_age_is_less_than_max_age
 
-  validates :user_id, presence: true, uniqueness: true
+  validates :user, presence: true, uniqueness: true
   validates :zip, :min_age, :max_age, :max_distance, presence: true
   validates :zip, length: { is: 5 }, numericality: true
   validates :min_age, :max_age, inclusion: { in: 18..125, message: "is

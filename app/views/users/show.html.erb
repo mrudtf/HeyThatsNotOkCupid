@@ -5,6 +5,9 @@
    <h2><%= @user.name %></h2>
    <h3><%= @user.age %> / <%= @user.gender %> /
      <%= @user.orientation %></h3>
+   <div class="matchbox">
+     <h3><%= match(@user)[:match] %>% Match</h3>
+     <h3><%= match(@user)[:friend] %>% Friend</h3>
      <!-- Add miles away -->
    <h3><%= @user.profile.location %> (--- Miles Away)</h3>
 

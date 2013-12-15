@@ -2,7 +2,7 @@ class Response < ActiveRecord::Base
   attr_accessible :answer_id, :explanation, :importance, :question_id, :user_id,
     :ok_answer_ids
 
-  validates :answer_id, :importance, :question_id, :user_id, presence: true
+  validates :answer, :importance, :question, :user, presence: true
 
   belongs_to :user
   belongs_to :question

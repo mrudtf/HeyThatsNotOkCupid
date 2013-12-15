@@ -1,7 +1,7 @@
 class Answer < ActiveRecord::Base
   attr_accessible :body, :question_id
 
-  validates :body, :question_id, presence: true
+  validates :body, presence: true
 
   belongs_to :question
   has_many :responses

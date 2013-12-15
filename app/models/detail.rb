@@ -4,7 +4,7 @@ class Detail < ActiveRecord::Base
 
   before_validation :set_last_login
 
-  validates :user_id, presence: true, uniqueness: true
+  validates :user, presence: true #add scoped uniqueness check?
   validates :last_on, presence: true
   validates :height, numericality: { less_than: 96, greater_than: 36 }
 

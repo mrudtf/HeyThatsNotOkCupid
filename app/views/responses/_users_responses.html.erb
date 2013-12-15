@@ -1,6 +1,8 @@
 <h1>Questions</h1>
 
+<% if unanswered_question %>
 <%= render "new", question: unanswered_question %>
+<% end %>
 
 <h2>Already answered</h2>
 <% responses.each do |response| %>
