@@ -5,7 +5,7 @@
     <strong><%= response.question.body %></strong>
     <p><%= user.name %>: <%= response.answer.body %></p>
     <p><%= current_user.name %>: <%= my_response(response.question.id).answer.body %></p>
-      <%= link_to "Re-answer", edit_response_url(my_response(response.question.id)) %>
+    <p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)) %></p>
   <% else %>
     <%= render "new", question: response.question %>
   <% end %>

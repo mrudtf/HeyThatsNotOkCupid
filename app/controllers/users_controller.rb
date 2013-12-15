@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :require_current_user!, only: [:show, :index]
-  before_filter :require_no_current_user!, only: [:create, :new]
+  skip_before_filter :require_current_user!, only: [:new, :create]
+  before_filter :require_no_current_user!, only: [:new, :create]
   before_filter :require_correct_user!, only: [:edit, :update, :destroy]
 
   def create
@@ -20,10 +20,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params.include?(:id)
-      @user = User.find(params[:id])
+    @user = User.find(params[:id])
+    @responses = Response.find_all_by_user_id(params[:id])
+    if @user == current_user
+      @unanswered_question = (Question.all - @user.answered_questions).first
     else
-      redirect_to user_url(current_user)
+      Visit.new(visitor_id: current_user.id, visitee_id: params[:id]).save
     end
   end
 

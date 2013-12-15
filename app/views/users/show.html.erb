@@ -14,17 +14,20 @@
      <!-- Add miles away -->
    <h3><%= @user.profile.location %> (--- Miles Away)</h3>
 
-   <%= render "profiles/show", profile: @user.profile %>
-   <% if my_page? %>
-     <%= link_to "Edit profile", edit_profile_url(@user) %>
-   <% end %>
-
    <%= render "details/show", detail: @user.detail %>
    <% if my_page? %>
      <%= link_to "Edit details", edit_detail_url(@user) %>
    <% end %>
 
+   <%= render "profiles/show", profile: @user.profile %>
+   <% if my_page? %>
+     <%= link_to "Edit profile", edit_profile_url(@user) %>
+   <% end %>
+
+   <%= render "responses/index" %>
+   <p><%= link_to "Submit a question", new_question_url %></p>
+
    <% unless my_page? %>
-     <%= link_to "Message me!", new_user_message_url(@user) %>
+     <p><%= link_to "Message me!", new_user_message_url(@user) %></p>
    <% end%>
 </body>

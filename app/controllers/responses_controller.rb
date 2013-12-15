@@ -13,11 +13,13 @@ class ResponsesController < ApplicationController
   end
 
   def index
-    @user = User.find(params[:user_id])
-    @responses = Response.find_all_by_user_id(params[:user_id])
-    if @user == current_user
-      @unanswered_question = (Question.all - @user.answered_questions).first
-    end
+    # Moved to user#show for partial
+
+    # @user = User.find(params[:user_id])
+    # @responses = Response.find_all_by_user_id(params[:user_id])
+    # if @user == current_user
+    #   @unanswered_question = (Question.all - @user.answered_questions).first
+    # end
   end
 
   def edit

@@ -6,6 +6,7 @@
 - add flash
 - fix routes
 - figure out the irrelevant question issue (write a validation and remove irrelevant?)
+- deletion
 
 ## always use rails helpers for img, JS, CSS
 

@@ -1,6 +1,9 @@
 class QuestionsController < ApplicationController
   def create
     @question = Question.new(params[:question])
+    params[:answers].each do |key, value|
+      params[:answers].delete(key) if params[:answers][key][:body] == ""
+    end
     @question.answers.new(params[:answers].values)
 
     if @question.save
