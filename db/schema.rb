@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131215222327) do
+ActiveRecord::Schema.define(:version => 20131215231832) do
 
   create_table "answers", :force => true do |t|
     t.integer  "question_id"
@@ -101,14 +101,18 @@ ActiveRecord::Schema.define(:version => 20131215222327) do
   add_index "responses", ["user_id", "question_id"], :name => "index_responses_on_user_id_and_question_id", :unique => true
 
   create_table "users", :force => true do |t|
-    t.string   "name",            :null => false
+    t.string   "name",               :null => false
     t.string   "password_digest"
     t.string   "token"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.string   "gender"
     t.string   "orientation"
     t.integer  "age"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "visits", :force => true do |t|

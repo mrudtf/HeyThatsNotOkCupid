@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :password, :gender, :orientation, :age
+  attr_accessible :name, :password, :gender, :orientation, :age, :photo
   attr_reader :password
 
   validates :password_digest, presence: { message: "Password can't be blank" }
@@ -13,10 +13,29 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_token
 
+  has_attached_file :photo, styles: {
+    big: "160x160#",
+    small: "40x40#"
+  }
+
   has_one :profile
   has_one :detail
-  has_many :photos # add this
+  has_one :photo
   has_many :responses
+
+  has_many(
+    :inbound_visits,
+    class_name: "Visit",
+    foreign_key: :visitee_id,
+    primary_key: :id
+  )
+
+  has_many(
+    :outbound_visits,
+    class_name: "Visit",
+    foreign_key: :visitor_id,
+    primary_key: :id
+  )
 
   has_many(
     :answered_questions,

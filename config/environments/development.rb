@@ -34,4 +34,15 @@ HeyThatsNotOkCupid::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Paperclip with AWS S3
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => "okcdevelopment",
+      :access_key_id => "AKIAJKMVA5DWU4TFKO3Q",
+      :secret_access_key => "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",
+      :s3_host_name => 's3.amazonaws.com'
+    }
+  }
 end
