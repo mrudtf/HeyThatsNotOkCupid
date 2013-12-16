@@ -4,7 +4,13 @@
   <% if my_response(response.question.id) %>
     <strong><%= response.question.body %></strong>
     <p><%= image_tag response.user.photo.url(:small) %> <%= response.answer.body %></p>
+    <% unless response.explanation == "" %>
+      <p>"<%= response.explanation %>"</p>
+    <% end %>
     <p><%= image_tag current_user.photo.url(:small) %> <%= my_response(response.question.id).answer.body %></p>
+    <% unless my_response(response.question.id).explanation == "" %>
+      <p>"<%= my_response(response.question.id).explanation %>"</p>
+    <% end %>
     <p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)) %></p>
   <% else %>
     <%= render "responses/new", question: response.question %>

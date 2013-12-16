@@ -35,3 +35,17 @@
   }
 }
 
+#profile {
+  width: 525px;
+  float: left;
+}
+
+#detail {
+  width: 250px;
+  float: left;
+
+  table {
+    border: 1px solid gray;
+    background: green;
+  }
+}

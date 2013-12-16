@@ -68,6 +68,12 @@ a {
 .sidenav {
   width: 185px;
   float: left;
+  height: 400px;
+  background: green;
+}
+
+.sidenav ul li {
+  margin: 10px 15px;
 }
 
 #content {

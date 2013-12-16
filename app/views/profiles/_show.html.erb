@@ -1,17 +1,17 @@
-<h4>About</h4>
+<h2>About</h2>
 
 <% unless profile.summary.empty? %>
-  <h5>My self-summary</h5>
+  <h3>My self-summary</h3>
   <p><%= profile.summary %></p>
 <% end %>
 
 <% unless profile.job.empty? %>
-<h5>What I'm doing with my life</h5>
-<p><%= profile.job %></p>
+  <h3>What I'm doing with my life</h3>
+  <p><%= profile.job %></p>
 <% end %>
 
 <% unless profile.likes.empty? %>
-<h5>Favorite books, movies, shows, music, and food</h5>
+<h3>Favorite books, movies, shows, music, and food</h3>
 <p><%= profile.likes %></p>
 <% end %>
 

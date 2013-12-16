@@ -30,15 +30,19 @@
        </article>
      </div>
 
-     <%= render "profiles/show", profile: @user.profile %>
-     <% if my_page? %>
-       <%= link_to "Edit profile", edit_profile_url(@user) %>
-     <% end %>
+    <article id="profile">
+       <%= render "profiles/show", profile: @user.profile %>
+       <% if my_page? %>
+         <%= link_to "Edit profile", edit_profile_url(@user) %>
+       <% end %>
+    </article>
 
-     <%= render "details/show", detail: @user.detail %>
-     <% if my_page? %>
-       <%= link_to "Edit details", edit_detail_url(@user) %>
-     <% end %>
+    <article id="details">
+       <%= render "details/show", detail: @user.detail %>
+       <% if my_page? %>
+         <%= link_to "Edit details", edit_detail_url(@user) %>
+       <% end %>
+    </article>
 
      <%= render "responses/index" %>
      <p><%= link_to "Submit a question", new_question_url %></p>
