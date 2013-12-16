@@ -7,28 +7,39 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
-      <p><%= error %></p>
+  <section id="content">
+    <% if flash[:errors] %>
+      <% flash[:errors].each do |error| %>
+        <p><%= error %></p>
+      <% end %>
     <% end %>
-  <% end %>
 
-  <% if current_user %>
-  <nav class="topnav">
-    <ul>
-      <li><%= link_to current_user.name, user_url(current_user) %></li>
-      <li><%= button_to "Log Out", "/session", method: "delete" %></li>
-    </ul>
-  </nav>
+    <header>
+      <div class="header-wrap group">
+        <img src="http://cdn.okcimg.com/blog/gaystraight/OkCupidLogo2.png" id="logo">
 
-  <nav class="sidenav">
-    <p><%= link_to "Matches", root_url %></p>
-    <p><%= link_to "Messages", conversations_url %></p>
-    <p><%= link_to "Visitors", "#" %></p>
-  </nav>
-  <% end %>
+      <% if current_user %>
+        <nav class="topnav">
+          <ul>
+            <li><%= link_to current_user.name, user_url(current_user) %></li>
+            <li><%= link_to "Log Out", "/session", method: "delete" %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
-<%= yield %>
+      <nav class="sidenav">
+        <ul class="group">
+          <li><%= link_to "Matches", root_url %></li>
+          <li><%= link_to "Messages", conversations_url %></li>
+          <li><%= link_to "Visitors", "#" %></li>
+        </ul>
+      </nav>
+    <% end %>
 
+
+
+    <%= yield %>
+  </section>
 </body>
 </html>

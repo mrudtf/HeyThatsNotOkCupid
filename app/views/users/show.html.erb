@@ -2,33 +2,49 @@
 </head>
 
 <body>
-   <%= image_tag @user.photo.url(:big) %>
-   <h2><%= @user.name %></h2>
-   <h3><%= @user.age %> / <%= @user.gender %> /
-     <%= @user.orientation %></h3>
-   <% unless @user == current_user %>
-   <div class="matchbox">
-     <h3><%= match(@user)[:match] %>% Match</h3>
-     <h3><%= match(@user)[:friend] %>% Friend</h3>
-   </div>
-   <% end %>
-     <!-- Add miles away -->
-   <h3><%= @user.profile.location %> (--- Miles Away)</h3>
+  <section class="page">
+    <div id="profile_header" class="group">
+       <%= image_tag @user.photo.url(:big) %>
 
-   <%= render "details/show", detail: @user.detail %>
-   <% if my_page? %>
-     <%= link_to "Edit details", edit_detail_url(@user) %>
-   <% end %>
+       <article id="profile_header_info">
+         <% unless @user == current_user %>
+         <div class="matchbox group">
+           <ul>
+             <li><%= match(@user)[:match] %>% Match</li>
+             <li><%= match(@user)[:friend] %>% Friend</li>
+             <li>67% Enemy</li>
+           </ul>
+         </div>
 
-   <%= render "profiles/show", profile: @user.profile %>
-   <% if my_page? %>
-     <%= link_to "Edit profile", edit_profile_url(@user) %>
-   <% end %>
+         <% end %>
+         <div class="name_and_attributes">
+           <ul>
+             <li id="username"><%= @user.name %></li>
+             <li><%= @user.age %> / <%= @user.gender %> /
+               <%= @user.orientation %></li>
 
-   <%= render "responses/index" %>
-   <p><%= link_to "Submit a question", new_question_url %></p>
+               <!-- Add miles away -->
+             <li><%= @user.profile.location %> (--- Miles Away)</li>
+           </ul>
+         </div>
+       </article>
+     </div>
 
-   <% unless my_page? %>
-     <p><%= link_to "Message me!", new_user_message_url(@user) %></p>
-   <% end%>
+     <%= render "profiles/show", profile: @user.profile %>
+     <% if my_page? %>
+       <%= link_to "Edit profile", edit_profile_url(@user) %>
+     <% end %>
+
+     <%= render "details/show", detail: @user.detail %>
+     <% if my_page? %>
+       <%= link_to "Edit details", edit_detail_url(@user) %>
+     <% end %>
+
+     <%= render "responses/index" %>
+     <p><%= link_to "Submit a question", new_question_url %></p>
+
+     <% unless my_page? %>
+       <p><%= link_to "Message me!", new_user_message_url(@user) %></p>
+     <% end%>
+   </section>
 </body>

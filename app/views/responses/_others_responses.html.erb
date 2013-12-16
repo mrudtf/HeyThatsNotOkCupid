@@ -7,6 +7,6 @@
     <p><%= image_tag current_user.photo.url(:small) %> <%= my_response(response.question.id).answer.body %></p>
     <p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)) %></p>
   <% else %>
-    <%= render "new", question: response.question %>
+    <%= render "responses/new", question: response.question %>
   <% end %>
 <% end %>
