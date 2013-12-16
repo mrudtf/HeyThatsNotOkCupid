@@ -36,16 +36,36 @@
 }
 
 #profile {
-  width: 525px;
+  width: 485px;
   float: left;
+  padding: 15px;
 }
 
-#detail {
-  width: 250px;
-  float: left;
+#details {
+  width: 210px;
+  float: right;
+  padding: 15px;
+
+  h4 {
+    padding-bottom: 5px;
+  }
 
   table {
-    border: 1px solid gray;
-    background: green;
+    width: 100%;
+    border: 2px solid gray;
+    background: pink;
+    padding: 15px;
+
+    tr {
+      border: 2px solid gray;
+    }
+
+    td {
+      padding: 5px 5px 5px 5px;
+    }
+
+    td.detail_name {
+      padding: 5px 10px 5px 5px;
+    }
   }
 }

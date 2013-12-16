@@ -37,18 +37,19 @@
        <% end %>
     </article>
 
-    <article id="details">
+    <article id="details" class="group">
        <%= render "details/show", detail: @user.detail %>
        <% if my_page? %>
          <%= link_to "Edit details", edit_detail_url(@user) %>
        <% end %>
     </article>
 
-     <%= render "responses/index" %>
+    <!-- Commented out for now while styling other sections -->
+     <!-- <%= render "responses/index" %>
      <p><%= link_to "Submit a question", new_question_url %></p>
 
      <% unless my_page? %>
        <p><%= link_to "Message me!", new_user_message_url(@user) %></p>
-     <% end%>
+     <% end%> -->
    </section>
 </body>
