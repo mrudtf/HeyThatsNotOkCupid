@@ -2,6 +2,7 @@
 </head>
 
 <body>
+   <%= image_tag @user.photo.url(:big) %>
    <h2><%= @user.name %></h2>
    <h3><%= @user.age %> / <%= @user.gender %> /
      <%= @user.orientation %></h3>

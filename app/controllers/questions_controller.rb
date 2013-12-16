@@ -7,7 +7,7 @@ class QuestionsController < ApplicationController
     @question.answers.new(params[:answers].values)
 
     if @question.save
-      redirect_to user_responses_url(current_user)
+      redirect_to user_url(current_user)
     else
       flash[:errors] = @question.errors.full_messages
       render :new

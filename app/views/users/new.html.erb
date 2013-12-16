@@ -1,39 +1,23 @@
 <h1>Sign Up!</h1>
 
-<form action="<%= users_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+<%= form_for @user do |f| %>
+  <p><%= f.label :username %>:
+  <%= f.text_field :name %></p>
 
-  <p>
-    <label for="user_name">Username: </label>
-    <input type="text" name="user[name]" value="" id="user_name">
-  </p>
+  <p><%= f.label :password %>:
+  <%= f.password_field :password %></p>
 
-  <p>
-    <label for="user_password">Password</label>
-    <input type="password" name="user[password]" value="" id="user_password">
-  </p>
+  <p><label for="user_gender">
+    <%= f.select :gender, [["I'm a girl", "F"], ["I'm a guy", "M"]] %></label></p>
 
-  <p>
-    <label for "user_gender"></label>
-    <select name="user[gender]" id="user_gender">
-      <option value="F">I'm a girl</option>
-      <option value="M">I'm a guy</option>
-    </select>
-  </p>
+  <p><label for "user_orientation">
+    <%= f.select :orientation, [["I'm straight", "Straight"],
+    ["I'm gay", "Gay"], ["I'm bi", "Bisexual"]]%></label></p>
 
-  <p>
-    <label for "user_orientation"></label>
-    <select name="user[orientation]" id="user_orientation">
-      <option value="Straight">I'm straight</option>
-      <option value="Gay">I'm gay</option>
-      <option value="Bisexual">I'm bi</option>
-    </select>
-  </p>
+  <p><label for="user_age">I'm </label><%= f.number_field :age %> years old</p>
 
-  <p>
-    <label for="user_age">I'm </label>
-    <input type="number" name="user[age]" id="user_age"> years old
-  </p>
+  <p><%= f.label :photo %>:
+    <%= f.file_field :photo %></p>
 
-  <p><input type="submit" value="Join"></p>
-</form>
+  <%= f.submit "Join" %>
+<% end %>

@@ -4,8 +4,7 @@ class User < ActiveRecord::Base
 
   validates :password_digest, presence: { message: "Password can't be blank" }
   validates :password, length: { minimum: 6, allow_nil: true }
-  validates :token, presence: true
-  validates :name, :gender, :orientation, presence: true
+  validates :token, :name, :gender, :orientation, :photo, presence: true
   validates :age, inclusion: { in: 18..125, message: "is
      unacceptable" }
   validates :gender, inclusion: { in: ["M", "F"] }

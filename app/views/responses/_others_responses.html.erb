@@ -3,8 +3,8 @@
 <% responses.each do |response| %>
   <% if my_response(response.question.id) %>
     <strong><%= response.question.body %></strong>
-    <p><%= user.name %>: <%= response.answer.body %></p>
-    <p><%= current_user.name %>: <%= my_response(response.question.id).answer.body %></p>
+    <p><%= image_tag response.user.photo.url(:small) %> <%= response.answer.body %></p>
+    <p><%= image_tag current_user.photo.url(:small) %> <%= my_response(response.question.id).answer.body %></p>
     <p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)) %></p>
   <% else %>
     <%= render "new", question: response.question %>

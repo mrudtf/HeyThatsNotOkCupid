@@ -3,7 +3,7 @@ class ResponsesController < ApplicationController
     @response = Response.new(params[:response])
 
     if @response.save
-      redirect_to user_responses_url(current_user)
+      redirect_to user_url(current_user)
     else
       @question = @response.question
       flash[:errors] = @response.errors.full_messages
