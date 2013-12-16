@@ -32,4 +32,8 @@ class UsersController < ApplicationController
   def index
     @users = filter_index
   end
+
+  def my_profile
+    redirect_to user_url(current_user)
+  end
 end

@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+
+.sidenav {
+  width: 185px;
+}
+
+.topnav {
+  float: right;
+}

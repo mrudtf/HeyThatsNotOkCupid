@@ -13,7 +13,7 @@ HeyThatsNotOkCupid::Application.routes.draw do
   resources :responses, except: [:index]
   resource :session, only: [:create, :destroy, :new]
 
-  root to: "users#index"
+  root to: "users#my_profile"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
