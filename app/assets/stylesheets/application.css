@@ -57,8 +57,15 @@ a {
 }
 
 /* Application (always displayed) */
+html {
+  background: #3764ED;
+}
+
 .topnav {
+  /* make this the size of the logo */
   float: right;
+  background: lightblue;
+  border-radius: 7px;
 }
 
 .topnav > ul > li {
@@ -71,7 +78,7 @@ a {
 }
 
 .sidenav {
-  width: 185px;
+  width: 202px;
   float: left;
   height: 400px;
   background: green;
@@ -82,12 +89,32 @@ a {
   margin: 10px 15px;
 }
 
+#recently_visited {
+  margin: 7px;
+  background: yellow;
+  border-radius: 5px;
+}
+
+#recently_visited p {
+  padding: 3px 0px 3px 5px;
+}
+
+#recently_visited ul {
+  padding: 0px 2px;
+}
+
+#recently_visited ul li {
+  float: left;
+  margin: 0;
+  padding: 0px 3px 0px 3px;
+}
+
 #content {
   width: 960px;
   margin: auto;
 }
 
 .page {
-  width: 775px;
+  width: 758px;
   float: right;
 }

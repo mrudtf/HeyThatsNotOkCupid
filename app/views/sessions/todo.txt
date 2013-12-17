@@ -1,10 +1,10 @@
-- write inclusion validations for dropdowns
+
 - add profile/detail uniqueness constraints
-- add age min
+
 - ask if you broke MVC with looking_for
 - ask about proper place to store constants
 - add flash
-- fix routes
+  - style flash
 - figure out the irrelevant question issue (write a validation and remove irrelevant?)
 - deletion
 - restructure w/ routes for different tabs; you don't need to get fancy
@@ -14,36 +14,15 @@
 - figure out a way to not constantly hammer the db via current_user
 - collect and fix before_filters for proper users
 
-Features:
-- Anything location-based
-- Questions
-- Matching
-- Photos
-- New message notification (read messages?)
-
-Responses:
-- Show question title
-- Show their response, your response
-- Make a response new
-
-
 Actual Backbone layout:
 - Navs all around
 - On main page, tabs for About/Photo/Questions
 
 
-Match algo in ActiveRecord:
-
-# iterate over this to reduce db querying? maybe?
-common_questions = me.answered_questions & you.answered_questions
-
-
-next unless you.answered_questions.include?(my_response.question)
-if my_response.ok_responses.ok_answers.include?(your_response.answer)
-  numerator += my_response.importance
-end
-denominator += my_response.importance
-
 Need matchbox on:
 - User show
 - matches
+
+ACTUAL TO-DOS:
+1. Maps!
+2. Stylin'

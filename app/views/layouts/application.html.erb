@@ -33,14 +33,21 @@
           <li><%= link_to "Matches", users_url %></li>
           <li><%= link_to "Messages", conversations_url %></li>
           <li><%= link_to "Visitors", "#" %></li>
-          <li id="recently_visited">
-            <%= recent_visitors %>
+          <li id="recently_visited" class="group">
+            <p>Recently Visited</p>
+            <ul>
+              <% recently_visited.each do |user| %>
+                <li><%= link_to (image_tag user.photo.url(:small)), user_url(user) %></li>
+              <% end %>
+            </ul>
           </li>
         </ul>
       </nav>
     <% end %>
 
+
     <%= yield %>
+
   </section>
 </body>
 </html>

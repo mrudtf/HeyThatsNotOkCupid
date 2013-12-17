@@ -4,6 +4,7 @@
 
 #profile_header {
   background: blue;
+  border-radius: 7px;
 
   img {
     float: left;
@@ -36,11 +37,12 @@
   }
 }
 
-#profile {
+#profile, #questions {
   width: 485px;
   float: left;
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 7px;
+  background: #88A4F7;
 }
 
 #details {
@@ -54,21 +56,26 @@
   }
 
   table {
-    width: 100%;
     border: 2px solid gray;
-    background: pink;
-    padding: 15px;
+    background: lightgreen;
+    overflow: hidden;
+    border-radius: 7px;
 
     tr {
       border: 2px solid gray;
     }
 
     td {
-      padding: 5px 5px 5px 5px;
+      padding: 5px;
     }
 
     td.detail_name {
       padding: 5px 10px 5px 5px;
     }
   }
+}
+
+#matches {
+  float: left;
+  padding: 15px;
 }
