@@ -4,12 +4,12 @@ module UsersHelper
   end
 
   def looking_for
-    if current_user.orientation == "Bisexual"
+    if User.find(params[:id]).orientation == "Bisexual"
       "everyone"
-    elsif current_user.orientation == "Straight"
-      current_user.gender == "M" ? "women" : "men"
+    elsif User.find(params[:id]).orientation == "Straight"
+      User.find(params[:id]).gender == "M" ? "women" : "men"
     else
-      current_user.gender == "F" ? "women" : "men"
+      User.find(params[:id]).gender == "F" ? "women" : "men"
     end
   end
 

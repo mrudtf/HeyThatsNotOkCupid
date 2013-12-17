@@ -75,6 +75,7 @@ a {
   float: left;
   height: 400px;
   background: green;
+  border-radius: 7px;
 }
 
 .sidenav ul li {
