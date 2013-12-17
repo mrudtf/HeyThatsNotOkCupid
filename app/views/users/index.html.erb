@@ -1,14 +1,22 @@
 <article id="matches">
   <h1>Matches</h1>
 
-  <% @users.each do |user| %>
-    <%= image_tag user.photo.url(:big) %>
-    <h2><%= link_to user.name, user_url(user) %></h2>
-    <h3><%= user.age %> / <%= user.gender %> / <%= user.orientation %></h3>
-    <div class="matchbox">
-      <h3><%= match(user)[:match] %>% Match</h3>
-      <h3><%= match(user)[:friend] %>% Friend</h3>
-    </div>
-    <h3><%= user.profile.location %> (--- Miles Away)</h3>
-  <% end %>
+  <!-- Make JS-based filter? -->
+  <p>Showing matches for a <%= current_user.orientation.downcase %>
+    <%= current_user.gender %></p>
+
+  <div id="matched_users">
+    <% @users.each do |user| %>
+      <div class="matched_user group">
+        <%= image_tag user.photo.url(:big) %>
+        <div class="matched_user_info">
+          <h2><%= link_to user.name, user_url(user) %></h2>
+          <h3><%= user.age %> / <%= user.gender %> / <%= user.orientation %></h3>
+          <h3 class="match_percentage"><%= match(user)[:match] %>% Match</h3>
+          <h3 class="friend_percentage"><%= match(user)[:friend] %>% Friend</h3>
+          <h3><%= user.profile.location %> (--- Miles Away)</h3>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </article>

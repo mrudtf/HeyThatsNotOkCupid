@@ -10,8 +10,8 @@
          <% unless @user == current_user %>
          <div class="matchbox group">
            <ul>
-             <li><%= match(@user)[:match] %>% Match</li>
-             <li><%= match(@user)[:friend] %>% Friend</li>
+             <li class="match_percentage"><%= match(@user)[:match] %>% Match</li>
+             <li class="friend_percentage"><%= match(@user)[:friend] %>% Friend</li>
              <li>67% Enemy</li>
            </ul>
          </div>

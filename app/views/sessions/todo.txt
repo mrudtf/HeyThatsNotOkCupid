@@ -26,3 +26,5 @@ Need matchbox on:
 ACTUAL TO-DOS:
 1. Maps!
 2. Stylin'
+3. Model tests
+4. Sort matches by match%

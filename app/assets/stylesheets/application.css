@@ -61,6 +61,14 @@ html {
   background: #3764ED;
 }
 
+.match_percentage {
+  color: #E83C8A;
+}
+
+.friend_percentage {
+  color: #2B65E3;
+}
+
 .topnav {
   /* make this the size of the logo */
   float: right;
@@ -70,7 +78,7 @@ html {
 
 .topnav > ul > li {
   float: left;
-  padding: 30px 15px;
+  padding: 15px;
 }
 
 #logo {

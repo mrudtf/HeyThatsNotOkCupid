@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// Show page
+
 #profile_header {
   background: blue;
   border-radius: 7px;
@@ -46,20 +48,21 @@
 }
 
 #details {
-  width: 210px;
+  width: 220px;
   float: right;
-  padding: 15px;
-
+  padding: 15px 0px 15px 15px;
+  background: lightgreen;
+  border-radius: 7px;
 
   h4 {
+    font-weight: bold;
+    font-size: 1.2em;
     padding-bottom: 5px;
   }
 
   table {
     border: 2px solid gray;
-    background: lightgreen;
-    overflow: hidden;
-    border-radius: 7px;
+    font-size: 0.8em;
 
     tr {
       border: 2px solid gray;
@@ -67,6 +70,7 @@
 
     td {
       padding: 5px;
+      max-width: 115px;
     }
 
     td.detail_name {
@@ -75,7 +79,49 @@
   }
 }
 
+// Matches (index) page
+
 #matches {
+  background: lightblue;
+  border-radius: 7px;
   float: left;
   padding: 15px;
+  width: 728px;
+
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #316BA8;
+  }
+
+  #matched_users {
+    background: lightgreen;
+    border-radius: 7px;
+
+    .matched_user {
+      margin: 15px 15px 0px 15px;
+      background: #5AB9D6;
+      border-radius: 7px;
+
+      h2 {
+        font-size: 1.3em;
+        margin-bottom: 8px;
+      }
+
+      h3 {
+        margin-bottom: 4px;
+      }
+
+      img {
+        float: left;
+        padding: 15px;
+      }
+
+      .matched_user_info {
+        float: left;
+        padding-top: 15px;
+      }
+    }
+  }
 }
+
