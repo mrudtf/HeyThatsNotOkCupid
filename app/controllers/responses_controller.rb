@@ -24,19 +24,22 @@ class ResponsesController < ApplicationController
 
   def edit
     @response = Response.find(params[:id])
-    redirect_to user_responses_url(current_user) unless @response.user ==
+    redirect_to user_url(current_user) unless @response.user ==
      current_user
     @question = @response.question
   end
 
   def new
     @question = Question.find(params[:id])
+
+    # Should happen by default anyway
+    # render :new if request.xhr?
   end
 
   def update
     @response = Response.find(params[:id])
     if @response.update_attributes(params[:response])
-      redirect_to user_responses_url(current_user)
+      redirect_to user_url(current_user)
     else
       flash[:errors] = @response.errors.full_messages
       @question = @response.question

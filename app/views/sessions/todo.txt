@@ -28,13 +28,28 @@ ACTUAL TO-DOS:
 2. Stylin'
 3. Model tests
 4. Sort matches by match%
+5. About/Questions need to be tabs... just make them different pages?
 
 
 Other's responses view swapping:
 Load in:
+- Either answer display or question with answer button
+
+- On button hit:
+  - Switch to form
+
+- On submit:
+  - Send it up and create or update response, use data sent back to...
+
 - Just question with answer button
   - Class showing if !user.answered_questions.include?(response.answer)
 - Comparison between answers with re-answer button (link?)
   - Class showing if user.answered_questions.include?(response.answer)
 - Form to answer question
   - Never initially showing
+
+
+- On creating a response:
+  - render back comparison partial
+
+- On answer
