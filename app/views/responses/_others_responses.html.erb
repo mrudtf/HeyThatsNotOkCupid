@@ -13,6 +13,7 @@
     <% end %>
     <p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)) %></p>
   <% else %>
-    <%= render "responses/new", question: response.question %>
+    <strong><%= response.question.body %></strong>
+    <p><%= link_to "Answer", new_response_url(response.question) %></p>
   <% end %>
 <% end %>

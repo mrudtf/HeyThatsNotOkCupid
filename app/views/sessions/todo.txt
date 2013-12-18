@@ -28,3 +28,13 @@ ACTUAL TO-DOS:
 2. Stylin'
 3. Model tests
 4. Sort matches by match%
+
+
+Other's responses view swapping:
+Load in:
+- Just question with answer button
+  - Class showing if !user.answered_questions.include?(response.answer)
+- Comparison between answers with re-answer button (link?)
+  - Class showing if user.answered_questions.include?(response.answer)
+- Form to answer question
+  - Never initially showing

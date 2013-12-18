@@ -8,9 +8,13 @@ HeyThatsNotOkCupid::Application.routes.draw do
     resources :responses, only: [:index]
   end
 
-  resources :questions, only: [:new, :create]
+  resources :questions, only: [:new, :create] do
+    member do
+      resources :responses, only: [:new]
+    end
+  end
   resources :conversations, only: [:index, :create, :show, :destroy]
-  resources :responses, except: [:index]
+  resources :responses, except: [:index, :new]
   resource :session, only: [:create, :destroy, :new]
 
   root to: "users#my_profile"
