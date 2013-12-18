@@ -2,4 +2,4 @@
 <% unless my_resp.explanation == "" %>
   <p>"<%= my_resp.explanation %>"</p>
 <% end %>
-<p><%= link_to "Re-answer", edit_response_url(my_resp) %></p>
+<p><%= link_to "Re-answer", edit_response_url(my_resp), class: "reanswer_button" %></p>

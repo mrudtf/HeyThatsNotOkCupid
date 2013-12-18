@@ -4,6 +4,7 @@ class ResponsesController < ApplicationController
     if @response.save
       # probably need to make this an entirely different path
       if request.xhr?
+        # can't be called response or my_response because those conflict
         render partial: "comparison", locals: {my_resp: @response}
       else
         redirect_to user_url(current_user)
@@ -43,7 +44,11 @@ class ResponsesController < ApplicationController
   def update
     @response = Response.find(params[:id])
     if @response.update_attributes(params[:response])
-      redirect_to user_url(current_user)
+      if request.xhr?
+        render partial: "comparison", locals: {my_resp: @response}
+      else
+        redirect_to user_url(current_user)
+      end
     else
       flash[:errors] = @response.errors.full_messages
       @question = @response.question

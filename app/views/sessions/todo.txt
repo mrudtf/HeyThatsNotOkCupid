@@ -53,3 +53,9 @@ Load in:
   - render back comparison partial
 
 - On answer
+
+- NEED: Reanswer on other user's
+- Everything on your own
+
+- On reanswer: class to show form, replace form with edit partial
+- On submit: fire that shit up, send back and replace comparison and show it

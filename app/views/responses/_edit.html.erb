@@ -1,0 +1,36 @@
+<form action="<%= response_url(response) %>" method="post" data-remote="true" class="edit_response_form">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="response[question_id]" value="<%= question.id %>">
+  <input type="hidden" name="response[user_id]" value="<%= current_user.id %>">
+
+  <h2><%= question.body %></h2>
+  <% question.answers.each do |answer| %>
+    <label for="response_answer_id">
+    <p><input type="radio" name="response[answer_id]" value="<%= answer.id %>"
+      <%= "checked" if response.answer_id == answer.id %>>
+      <%= answer.body %></p></label>
+  <% end %>
+
+  <h3>Answers I'll accept...</h3>
+  <% question.answers.each do |answer| %>
+    <label for="response_answer_id">
+    <p><input type="checkbox" name="response[ok_answer_ids][]" value="<%= answer.id %>"
+      <%= "checked" if response.ok_answer_ids.include?(answer.id) %>>
+    <%= answer.body %></p></label>
+  <% end %>
+
+  <h3>This question is...</h3>
+  <% [["Irrelevant", 0], ["A little important", 1], ["Somewhat important", 10],
+    ["Very important", 50], ["Mandatory", 250]].each do |pair| %>
+    <label for="response_importance">
+    <p><input type="radio" name="response[importance]" value="<%= pair[1] %>"
+      <%= "checked" if response.importance == pair[1] %>><%= pair[0]%></p></label>
+  <% end %>
+
+  <h3>Explain your answer (optional)</h3>
+  <textarea name="response[explanation]" rows="8"
+    cols="40"><%= response.explanation %></textarea>
+
+  <p><input type="submit" value="Submit"></p>
+</form>
