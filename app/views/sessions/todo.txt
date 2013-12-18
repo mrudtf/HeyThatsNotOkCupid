@@ -29,6 +29,7 @@ ACTUAL TO-DOS:
 3. Model tests
 4. Sort matches by match%
 5. About/Questions need to be tabs... just make them different pages?
+6. Fix javascript vars to be camelcase
 
 
 Other's responses view swapping:

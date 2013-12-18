@@ -62,11 +62,22 @@ $(document).ready(function(event) {
     $my_answer.html(data);
     $question_div.removeClass("show_answer_form");
     $question_div.addClass("show_answer_comparison");
+
+    // remove class new-response-form and add edit-response-form to form
+    var $form = $(event.currentTarget);
+    $form.removeClass("new_response_form");
+    $form.addClass("edit_response_form");
+    // append hidden put input to form
+    $form.append('<input type="hidden" name="_method" value="put">');
+    // change route
+    var $reanswer_button = $form.parent().next().find(".reanswer_button");
+    var newUrl = $reanswer_button.attr("href").substr(0, $reanswer_button.attr("href").length - 5);
+    console.log(newUrl);
+    $form.attr("action", newUrl);
   });
 
   $(".my_answer").on("click", ".reanswer_button", function(event) {
     event.preventDefault();
-
     var $question_div = $(event.currentTarget).parent().parent().parent().parent();
     $question_div.addClass("show_answer_form");
     $question_div.removeClass("show_answer_comparison");
