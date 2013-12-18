@@ -7,6 +7,7 @@ class ResponsesController < ApplicationController
         # can't be called response or my_response because those conflict
         render partial: "comparison", locals: {my_resp: @response}
       else
+        puts "you did it"
         redirect_to user_url(current_user)
       end
     else

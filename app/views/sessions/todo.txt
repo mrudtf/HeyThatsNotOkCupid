@@ -31,6 +31,9 @@ ACTUAL TO-DOS:
 5. About/Questions need to be tabs... just make them different pages?
 6. Fix javascript vars to be camelcase
 
+0. PUT EVERYTHING ON ONE USER PAGE AND MAKE IT EDITABLE :(
+  - Answering questions won't redirect because the partial is always xhr
+  - So you gotta do that
 
 Other's responses view swapping:
 Load in:

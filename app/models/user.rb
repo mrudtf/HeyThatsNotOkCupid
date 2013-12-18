@@ -17,10 +17,10 @@ class User < ActiveRecord::Base
     small: "40x40#"
   }
 
-  has_one :profile
-  has_one :detail
-  has_one :photo
-  has_many :responses
+  has_one :profile, dependent: :destroy
+  has_one :detail, dependent: :destroy
+  has_one :photo, dependent: :destroy
+  has_many :responses, dependent: :destroy
 
   has_many(
     :inbound_visits,
