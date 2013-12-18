@@ -63,7 +63,7 @@ $(document).ready(function(event) {
     $question_div.removeClass("show_answer_form");
     $question_div.addClass("show_answer_comparison");
 
-    // remove class new-response-form and add edit-response-form to form
+    // remove class new_response_form and add edit_response_form to form
     var $form = $(event.currentTarget);
     $form.removeClass("new_response_form");
     $form.addClass("edit_response_form");
@@ -72,7 +72,6 @@ $(document).ready(function(event) {
     // change route
     var $reanswer_button = $form.parent().next().find(".reanswer_button");
     var newUrl = $reanswer_button.attr("href").substr(0, $reanswer_button.attr("href").length - 5);
-    console.log(newUrl);
     $form.attr("action", newUrl);
   });
 
