@@ -155,3 +155,27 @@
     display: block;
   }
 }
+
+// Profile
+
+#profile {
+  .essay {
+    display: none;
+  }
+
+  .form {
+    display: none;
+  }
+
+  .show-essay {
+    .essay {
+      display: block;
+    }
+  }
+
+  .show-form {
+    .form {
+      display: block;
+    }
+  }
+}

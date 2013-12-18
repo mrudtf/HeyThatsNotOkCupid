@@ -1,9 +1,26 @@
 <h2>About</h2>
 
-<% unless profile.summary.empty? %>
-  <h3>My self-summary</h3>
-  <p><%= profile.summary %></p>
+<!-- WORK IN PROGRESS -->
+<div class="show_essay">
+<% if profile.user == current_user || !profile.summary.empty?  %>
+    <div class="essay">
+      <h3>My self-summary</h3>
+      <p><%= profile.summary %></p>
+    </div>
 <% end %>
+    <% if profile.user == current_user %>
+      <%= link_to "Edit", "#", class: "edit_button" %>
+      <form action="<%= profile_url(current_user) %>" method="post" class="form">
+        <input type='hidden' name='_method' value='put'>
+        <p><label for="profile_summary">My self-summary</label></p>
+        <p>
+          <textarea rows="7" cols="50" name="profile[summary]"
+           id="profile_summary"><%= profile.summary %></textarea>
+        </p>
+        <p><input type="submit" value="Ok!"></p>
+      </form>
+    <% end %>
+</div>
 
 <% unless profile.job.empty? %>
   <h3>What I'm doing with my life</h3>
@@ -16,3 +33,10 @@
 <% end %>
 
 <p>Looking for <%= looking_for %> aged <%= profile.min_age %> to <%= profile.max_age %></p>
+
+<script>
+$(".show_essay").on("click", ".edit_button", function(event) {
+  event.preventDefault();
+  console.log(event.currentTarget);
+});
+</script>
