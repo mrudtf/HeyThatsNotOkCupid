@@ -1,4 +1,4 @@
-<form action="<%= responses_url %>" method="post">
+<form action="<%= responses_url %>" method="post" data-remote="true" class="new_response_form">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
   <input type="hidden" name="response[question_id]" value="<%= question.id %>">
   <input type="hidden" name="response[user_id]" value="<%= current_user.id %>">

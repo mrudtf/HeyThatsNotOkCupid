@@ -125,3 +125,33 @@
   }
 }
 
+// Questions tab (when that exists)
+.answer_form {
+  display: none;
+}
+
+.answer_comparison {
+  display: none;
+}
+
+.answer_link {
+  display: none;
+}
+
+.show_answer_link {
+  .answer_link {
+    display: block;
+  }
+}
+
+.show_answer_form {
+  .answer_form {
+    display: block;
+  }
+}
+
+.show_answer_comparison {
+  .answer_comparison {
+    display: block;
+  }
+}

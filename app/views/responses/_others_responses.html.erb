@@ -14,8 +14,45 @@
       <% end %>
       <p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)) %></p>
     <% else %>
-      <strong><%= response.question.body %></strong>
-      <p><%= link_to "Answer", new_response_url(response.question) %></p>
+      <div class="show_answer_link">
+        <div class="answer_link">
+          <strong><%= response.question.body %></strong>
+          <p><%= link_to "Answer", new_response_url(response.question), class: "answer_button" %></p>
+        </div>
+        <div class="answer_form">
+          <%= render "responses/new", question: (response.question) %>
+        </div>
+        <div class="answer_comparison">
+          <strong><%= response.question.body %></strong>
+          <p><%= image_tag response.user.photo.url(:small) %> <%= response.answer.body %></p>
+          <% unless response.explanation == "" %>
+            <p>"<%= response.explanation %>"</p>
+          <% end %>
+        </div>
+      </div>
     <% end %>
   </div>
 <% end %>
+
+<script>
+$(document).ready(function(event) {
+
+  $(".answer_link").on("click", ".answer_button", function(event) {
+    event.preventDefault();
+
+    var $question_div = $(event.currentTarget).parent().parent().parent();
+    $question_div.addClass("show_answer_form");
+    $question_div.removeClass("show_answer_link");
+  });
+
+  $(".new_response_form").on("ajax:success", function(event, data) {
+    console.log(data);
+    var $comparison_div = $(event.currentTarget).parent().next();
+    var $question_div = $(event.currentTarget).parent().parent();
+    $comparison_div.append(data);
+    $question_div.removeClass("show_answer_form");
+    $question_div.addClass("show_answer_comparison");
+  });
+
+});
+</script>

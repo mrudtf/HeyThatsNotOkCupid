@@ -1,10 +1,5 @@
-<strong><%= response.question.body %></strong>
-<p><%= image_tag response.user.photo.url(:small) %> <%= response.answer.body %></p>
-<% unless response.explanation == "" %>
-  <p>"<%= response.explanation %>"</p>
+<p><%= image_tag current_user.photo.url(:small) %> <%= my_resp.answer.body %></p>
+<% unless my_resp.explanation == "" %>
+  <p>"<%= my_resp.explanation %>"</p>
 <% end %>
-<p><%= image_tag current_user.photo.url(:small) %> <%= my_response(response.question.id).answer.body %></p>
-<% unless my_response(response.question.id).explanation == "" %>
-  <p>"<%= my_response(response.question.id).explanation %>"</p>
-<% end %>
-<p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)) %></p>
+<p><%= link_to "Re-answer", edit_response_url(my_resp) %></p>

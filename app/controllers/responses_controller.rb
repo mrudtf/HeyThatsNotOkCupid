@@ -1,9 +1,13 @@
 class ResponsesController < ApplicationController
   def create
     @response = Response.new(params[:response])
-
     if @response.save
-      redirect_to user_url(current_user)
+      # probably need to make this an entirely different path
+      if request.xhr?
+        render partial: "comparison", locals: {my_resp: @response}
+      else
+        redirect_to user_url(current_user)
+      end
     else
       @question = @response.question
       flash[:errors] = @response.errors.full_messages
