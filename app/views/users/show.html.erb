@@ -32,9 +32,6 @@
 
     <article id="profile">
        <%= render "profiles/show", profile: @user.profile %>
-       <% if my_page? %>
-         <%= link_to "Edit profile", edit_profile_url(@user) %>
-       <% end %>
     </article>
 
     <article id="details" class="group">

@@ -71,7 +71,31 @@
     <% end %>
 </div>
 
-<p>Looking for <%= looking_for %> aged <%= profile.min_age %> to <%= profile.max_age %></p>
+<div class="show_essay">
+  <div class="essay" id="ages">
+    <p>Looking for <%= looking_for %> aged <%= profile.min_age %> to <%= profile.max_age %></p>
+    <%= link_to "Edit", "#", class: "edit_button" if profile.user == current_user %>
+  </div>
+  <% if profile.user == current_user %>
+    <form action="<%= profile_url(current_user) %>" method="post"
+      class="form" data-remote="true">
+      <input type='hidden' name='_method' value='put'>
+      <p>
+        <label for="profile_min_age">I'm interested in people </label>
+        <input type="number" name="profile[min_age]" value="<%= profile.min_age %>"
+          id="profile_min_age">
+        <label for="profile_max_age">to </label>
+        <input type="number" name="profile[max_age]" value="<%= profile.max_age %>"
+          id="profile_max_age"> years old,
+        <label for="profile_max_distance">living up to </label>
+        <input type="number" name="profile[max_distance]"
+          value="<%= profile.max_distance %>" id="profile_max_distance">
+        miles away
+      </p>
+      <p><input type="submit" value="Ok!"></p>
+    </form>
+  <% end %>
+</div>
 
 <script>
 $(".show_essay").on("click", ".edit_button", function(event) {
