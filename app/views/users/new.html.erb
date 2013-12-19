@@ -1,6 +1,9 @@
 <h1>Sign Up!</h1>
 
 <%= form_for @user do |f| %>
+<input type="hidden" value="" id="user_latitude" name="user[latitude]">
+<input type="hidden" value="" id="user_longitude" name="user[longitude]">
+
   <p><%= f.label :username %>:
   <%= f.text_field :name %></p>
 
@@ -21,3 +24,21 @@
 
   <%= f.submit "Join" %>
 <% end %>
+
+<script>
+$(document).ready(function() {
+  getLocation();
+});
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(assignPosition);
+  }
+  else{ alert("Geolocation is not supported by this browser."); }
+};
+
+function assignPosition(position) {
+  $("#user_latitude").attr("value", position.coords.latitude);
+  $("#user_longitude").attr("value", position.coords.longitude);
+};
+</script>

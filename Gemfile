@@ -11,6 +11,8 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
 
+gem 'geocoder'
+gem 'mapbox-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,8 +1,10 @@
 <head>
+  <style>#map { float: right; width: 160px; height: 160px; margin: 15px 15px 15px 0px; }</style>
 </head>
 
 <body>
   <section class="page">
+
     <div id="profile_header" class="group">
        <%= image_tag @user.photo.url(:big) %>
 
@@ -26,8 +28,10 @@
                <!-- Add miles away -->
              <li><%= @user.profile.location %> (--- Miles Away)</li>
            </ul>
+
          </div>
        </article>
+       <div id='map'></div>
      </div>
 
     <article id="profile">
@@ -51,3 +55,7 @@
    </article>
    </section>
 </body>
+
+<script type='text/javascript'>
+  var map = L.mapbox.map('map', 'baghutch.gjcpnfje').setView([<%= @user.latitude %>, <%= @user.longitude %>], 16);
+</script>

@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :name, :password, :gender, :orientation, :age, :photo
+  attr_accessible :name, :password, :gender, :orientation, :age, :photo,
+   :latitude, :longitude, :address
   attr_reader :password
 
   validates :password_digest, presence: { message: "Password can't be blank" }
@@ -11,6 +12,9 @@ class User < ActiveRecord::Base
   validates :orientation, inclusion: { in: ["Straight", "Gay", "Bisexual"] }
 
   after_initialize :ensure_token
+
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :reverse_geocode
 
   has_attached_file :photo, styles: {
     big: "160x160#",
