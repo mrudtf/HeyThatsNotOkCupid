@@ -6,7 +6,7 @@ class Detail < ActiveRecord::Base
 
   validates :user, presence: true #add scoped uniqueness check?
   validates :last_on, presence: true
-  validates :height, numericality: { less_than: 96, greater_than: 36 }
+  validates :height, allow_blank: true, numericality: { less_than: 96, greater_than: 36 }
 
   ACCEPTABLES = { body_type: ["Thin", "Overweight", "Average", "Fit"], diet:
     ["Anything", "Vegetarian", "Vegan", "Kosher", "Halal", "Other"], smokes:

@@ -2,24 +2,26 @@ class ProfilesController < ApplicationController
   before_filter :require_correct_user!, only: [:create, :edit, :new, :update,
      :destroy]
 
+  # Now created by user
   def create
-    @profile = Profile.new(params[:profile])
-
-    if @profile.save
-      redirect_to new_detail_url(current_user)
-    else
-      flash[:errors] = @profile.errors.full_messages
-      render :new
-    end
+    # @profile = Profile.new(params[:profile])
+    #
+    # if @profile.save
+    #   redirect_to new_detail_url(current_user)
+    # else
+    #   flash[:errors] = @profile.errors.full_messages
+    #   render :new
+    # end
   end
 
+  # Now created by user
   def new
-    if current_user.profile
-      @profile = current_user.profile
-      render :edit
-    else
-      @profile = Profile.new(min_age: 18, max_age: 99, max_distance: 50)
-    end
+    # if current_user.profile
+    #   @profile = current_user.profile
+    #   render :edit
+    # else
+    #   @profile = Profile.new(min_age: 18, max_age: 99, max_distance: 50)
+    # end
   end
 
   def edit

@@ -2,24 +2,26 @@ class DetailsController < ApplicationController
   before_filter :require_correct_user!, only: [:create, :edit, :new, :update,
      :destroy]
 
+  # Now created by user
   def create
-    @detail = Detail.new(params[:detail])
-
-    if @detail.save
-      redirect_to user_url(current_user)
-    else
-      flash[:errors] = @detail.errors.full_messages
-      render :new
-    end
+    # @detail = Detail.new(params[:detail])
+    #
+    # if @detail.save
+    #   redirect_to user_url(current_user)
+    # else
+    #   flash[:errors] = @detail.errors.full_messages
+    #   render :new
+    # end
   end
 
+  # Now created by user
   def new
-    if current_user.detail
-      @detail = current_user.detail
-      render :edit
-    else
-      @detail = Detail.new
-    end
+    # if current_user.detail
+    #   @detail = current_user.detail
+    #   render :edit
+    # else
+    #   @detail = Detail.new
+    # end
   end
 
   def edit

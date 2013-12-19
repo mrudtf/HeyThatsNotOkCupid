@@ -6,9 +6,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
+
     if @user.save
       self.current_user = @user
-      redirect_to new_profile_url(@user)
+      @user.profile = Profile.new(zip: 10010, min_age: 18, max_age: 99, max_distance: 50, summary: "", job: "", likes: "")
+      @user.detail = Detail.new
+      @user.save
+      flash[:errors] = ["Fill out your profile to get more accurate matches!"]
+      redirect_to user_url(@user)
     else
       flash[:errors] = @user.errors.full_messages
       render :new
