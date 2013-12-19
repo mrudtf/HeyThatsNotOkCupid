@@ -30,7 +30,11 @@ class ProfilesController < ApplicationController
     @profile = current_user.profile
 
     if @profile.update_attributes(params[:profile])
-      redirect_to user_url(current_user)
+      if request.xhr?
+        render partial: "essays", locals: {profile: @profile}
+      else
+        redirect_to user_url(current_user)
+      end
     else
       flash[:errors] = @profile.errors.full_messages
       render :edit
