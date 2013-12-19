@@ -1,6 +1,7 @@
 class ResponsesController < ApplicationController
   def create
     @response = Response.new(params[:response])
+    puts request.xhr?
     if @response.save
       # probably need to make this an entirely different path
       if request.xhr?
