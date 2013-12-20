@@ -31,6 +31,9 @@
 
     .name_and_attributes {
       margin: 15px;
+      #address {
+        max-width: 300px;
+      }
     }
 
     #username {

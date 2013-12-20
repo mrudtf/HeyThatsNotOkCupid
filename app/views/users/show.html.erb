@@ -26,7 +26,7 @@
                <%= @user.orientation %></li>
 
                <!-- Add miles away -->
-             <li><%= @user.profile.location %> (--- Miles Away)</li>
+             <li id="address"></li>
            </ul>
 
          </div>
@@ -57,5 +57,18 @@
 </body>
 
 <script type='text/javascript'>
-  var map = L.mapbox.map('map', 'baghutch.gjcpnfje').setView([<%= @user.latitude %>, <%= @user.longitude %>], 16);
+  var map = L.mapbox.map('map', 'baghutch.gjcpnfje').setView([<%= @user.latitude %>, <%= @user.longitude %>], 15);
+  L.mapbox.markerLayer({
+      type: 'Feature',
+      geometry: {
+          type: 'Point',
+          coordinates: [<%= @user.longitude %>, <%= @user.latitude %>]
+      },
+      properties: {
+          'marker-color': '#F70F39',
+          'marker-symbol': 'school',
+          title: '<%= @user.address %>',
+          description: '<%= @user.name %> is right here, right now.'
+      }
+  }).addTo(map);
 </script>
