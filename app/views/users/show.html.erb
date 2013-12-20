@@ -48,10 +48,10 @@
     <article id="questions">
      <%= render "responses/index" %>
      <p><%= link_to "Submit a question", new_question_url %></p>
+     <% unless my_page? %>
+       <p><%= link_to "Message me!", new_user_message_url(@user) %></p>
+     <% end%>
    </article>
-   <% unless my_page? %>
-     <p><%= link_to "Message me!", new_user_message_url(@user) %></p>
-   <% end%>
    </section>
 </body>
 
