@@ -30,14 +30,15 @@
 <script>
 $(document).ready(function() {
 
-  $(".response").on("click", ".re-answer", function(event) {
+  $("#already_answered").on("click", ".re-answer", function(event) {
     event.preventDefault();
     var $questionDiv = $(event.currentTarget).parent().parent();
     $questionDiv.addClass("show_form");
     $questionDiv.removeClass("show_response");
   });
 
-  $(".edit_response_form").on("ajax:success", function(event, data) {
+  $("#already_answered").on("ajax:success", ".edit_response_form", function(event, data) {
+    alert("response edited, dawg!");
     var $questionDiv = $(event.currentTarget).parent().parent();
     var $response = $questionDiv.find(".response");
     var updatedResponse = $(data).filter("#users_page").html();
@@ -48,9 +49,7 @@ $(document).ready(function() {
   });
 
   $(".new_response_form").on("ajax:success", function(event, data) {
-    // append $(data).filter("#users_page").html(); to $("#already_answered")
     $("#already_answered").append($(data).filter("#new_response").html());
-    // replace $("#unanswered_question") with $(data).filter("#unanswered_question").html()
     $("#unanswered_question").html($(data).filter("#unanswered_question").html());
   });
 });
