@@ -159,6 +159,28 @@
   }
 }
 
+#questions {
+  .form {
+    display: none;
+  }
+
+  .response {
+    display: none;
+  }
+
+  .show_response {
+    .response {
+      display: block;
+    }
+  }
+
+  .show_form {
+    .form {
+      display: block;
+    }
+  }
+}
+
 // Profile
 
 #profile {

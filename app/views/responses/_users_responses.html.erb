@@ -3,12 +3,46 @@
 
 <!-- DOES NOT REDIRECT -->
 <% if unanswered_question %>
-<%= render "responses/new", question: unanswered_question %>
+  <div class="unanswered_question">
+    <%= render "responses/new", question: unanswered_question %>
+  </div>
 <% end %>
 
 <h2>Already answered</h2>
 <% responses.each do |response| %>
-  <p><strong><%= response.question.body %></strong></p>
-  <p><%= response.answer.body %></p>
-  <%= link_to "Re-answer", edit_response_url(response) %>
+<div class="show_response">
+  <div class="response">
+    <p><strong><%= response.question.body %></strong></p>
+    <p><%= response.answer.body %></p>
+    <% unless response.explanation == "" %>
+    <p>"<%= response.explanation %>"</p>
+    <% end %>
+    <%= link_to "Re-answer", edit_response_url(response), class: "re-answer" %>
+  </div>
+  <div class="form">
+    <%= render "responses/edit", question: response.question, response: response %>
+  </div>
+</div>
 <% end %>
+
+<script>
+$(document).ready(function() {
+
+  $(".response").on("click", ".re-answer", function(event) {
+    event.preventDefault();
+    var $questionDiv = $(event.currentTarget).parent().parent();
+    $questionDiv.addClass("show_form");
+    $questionDiv.removeClass("show_response");
+  });
+
+  $(".edit_response_form").on("ajax:success", function(event, data) {
+    var $questionDiv = $(event.currentTarget).parent().parent();
+    var $response = $questionDiv.find(".response");
+    var updatedResponse = $(data).filter("#users_page").html();
+
+    $response.html(updatedResponse);
+    $questionDiv.removeClass("show_form");
+    $questionDiv.addClass("show_response");
+  });
+});
+</script>
