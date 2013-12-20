@@ -59,7 +59,9 @@ $(document).ready(function(event) {
   $(".new_response_form").on("ajax:success", function(event, data) {
     var $my_answer = $(event.currentTarget).parent().next().find(".my_answer");
     var $question_div = $(event.currentTarget).parent().parent();
-    $my_answer.html(data);
+    var newResponse = $(data).filter("#others_page").html();
+
+    $my_answer.html(newResponse);
     $question_div.removeClass("show_answer_form");
     $question_div.addClass("show_answer_comparison");
 
@@ -85,7 +87,9 @@ $(document).ready(function(event) {
   $(".edit_response_form").on("ajax:success", function(event, data) {
     var $my_answer = $(event.currentTarget).parent().next().find(".my_answer");
     var $question_div = $(event.currentTarget).parent().parent();
-    $my_answer.html(data);
+    var newResponse = $(data).filter("#others_page").html();
+
+    $my_answer.html(newResponse);
     $question_div.removeClass("show_answer_form");
     $question_div.addClass("show_answer_comparison");
   });

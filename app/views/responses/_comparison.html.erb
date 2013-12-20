@@ -14,3 +14,28 @@
   <% end %>
   <%= link_to "Re-answer", edit_response_url(my_resp), class: "re-answer" %>
 </div>
+
+<div id="new_response">
+  <div class="show_response">
+    <div class="response">
+      <p><strong><%= my_resp.question.body %></strong></p>
+      <p><%= my_resp.answer.body %></p>
+      <% unless my_resp.explanation == "" %>
+      <p>"<%= my_resp.explanation %>"</p>
+      <% end %>
+      <%= link_to "Re-answer", edit_response_url(my_resp), class: "re-answer" %>
+    </div>
+    <div class="form">
+      <%= render "responses/edit", question: my_resp.question, response: my_resp %>
+    </div>
+  </div>
+</div>
+
+<div id="unanswered_question">
+  <% if unanswered_question %>
+    <%= render "responses/new", question: unanswered_question %>
+  <% else %>
+  <!-- necessary to remove form after final question -->
+    <span></span>
+  <% end %>
+</div>

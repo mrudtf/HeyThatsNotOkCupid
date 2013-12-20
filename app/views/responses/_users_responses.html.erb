@@ -3,27 +3,29 @@
 
 <!-- DOES NOT REDIRECT -->
 <% if unanswered_question %>
-  <div class="unanswered_question">
+  <div id="unanswered_question">
     <%= render "responses/new", question: unanswered_question %>
   </div>
 <% end %>
 
 <h2>Already answered</h2>
+<div id="already_answered">
 <% responses.each do |response| %>
-<div class="show_response">
-  <div class="response">
-    <p><strong><%= response.question.body %></strong></p>
-    <p><%= response.answer.body %></p>
-    <% unless response.explanation == "" %>
-    <p>"<%= response.explanation %>"</p>
-    <% end %>
-    <%= link_to "Re-answer", edit_response_url(response), class: "re-answer" %>
+  <div class="show_response">
+    <div class="response">
+      <p><strong><%= response.question.body %></strong></p>
+      <p><%= response.answer.body %></p>
+      <% unless response.explanation == "" %>
+      <p>"<%= response.explanation %>"</p>
+      <% end %>
+      <%= link_to "Re-answer", edit_response_url(response), class: "re-answer" %>
+    </div>
+    <div class="form">
+      <%= render "responses/edit", question: response.question, response: response %>
+    </div>
   </div>
-  <div class="form">
-    <%= render "responses/edit", question: response.question, response: response %>
-  </div>
+  <% end %>
 </div>
-<% end %>
 
 <script>
 $(document).ready(function() {
@@ -43,6 +45,13 @@ $(document).ready(function() {
     $response.html(updatedResponse);
     $questionDiv.removeClass("show_form");
     $questionDiv.addClass("show_response");
+  });
+
+  $(".new_response_form").on("ajax:success", function(event, data) {
+    // append $(data).filter("#users_page").html(); to $("#already_answered")
+    $("#already_answered").append($(data).filter("#new_response").html());
+    // replace $("#unanswered_question") with $(data).filter("#unanswered_question").html()
+    $("#unanswered_question").html($(data).filter("#unanswered_question").html());
   });
 });
 </script>
