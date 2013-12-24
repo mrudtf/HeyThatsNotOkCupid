@@ -6,6 +6,7 @@ HeyThatsNotOkCupid::Application.routes.draw do
     end
     resources :messages, only: [:create, :new]
     resources :responses, only: [:index]
+    resources :visits, only: [:index]
   end
 
   resources :questions, only: [:new, :create] do

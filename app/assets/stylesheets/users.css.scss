@@ -82,9 +82,9 @@
   }
 }
 
-// Matches (index) page
+// Matches and Visitors (index) pages
 
-#matches {
+#matches, #visitors {
   background: lightblue;
   border-radius: 7px;
   float: left;
@@ -97,11 +97,11 @@
     color: #316BA8;
   }
 
-  #matched_users {
+  #users {
     background: lightgreen;
     border-radius: 7px;
 
-    .matched_user {
+    .user {
       margin: 15px 15px 0px 15px;
       background: #5AB9D6;
       border-radius: 7px;
@@ -120,7 +120,7 @@
         padding: 15px;
       }
 
-      .matched_user_info {
+      .user_info {
         float: left;
         padding-top: 15px;
       }
