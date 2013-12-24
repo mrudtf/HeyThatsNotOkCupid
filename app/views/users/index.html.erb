@@ -15,7 +15,7 @@
           <h3><%= user.age %> / <%= user.gender %> / <%= user.orientation %></h3>
           <h3 class="match_percentage"><%= match(user)[:match] %>% Match</h3>
           <h3 class="friend_percentage"><%= match(user)[:friend] %>% Friend</h3>
-          <h3><%= user.profile.location %> (--- Miles Away)</h3>
+          <h3><%= current_user.distance_from(user).round(2) %> miles away</h3>
         </div>
       </div>
     <% end %>

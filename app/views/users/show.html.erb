@@ -26,7 +26,9 @@
                <%= @user.orientation %></li>
 
                <!-- Add miles away -->
-             <li id="address"></li>
+             <% unless @user == current_user %>
+               <li id="distance"><%= current_user.distance_from(@user).round(2) %> miles away</li>
+             <% end %>
            </ul>
 
          </div>
