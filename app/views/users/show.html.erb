@@ -43,17 +43,19 @@
         <% end %>
      </article>
 
-     <article id="profile">
-        <%= render "profiles/show", profile: @user.profile %>
-     </article>
+     <div id="profile_or_questions" class="show_questions">
+       <article id="profile">
+          <%= render "profiles/show", profile: @user.profile %>
+       </article>
 
-    <article id="questions">
-     <%= render "responses/index" %>
-     <p><%= link_to "Submit a question", new_question_url %></p>
-     <% unless my_page? %>
-       <p><%= link_to "Message me!", new_user_message_url(@user) %></p>
-     <% end%>
-   </article>
+       <article id="questions">
+         <%= render "responses/index" %>
+         <p><%= link_to "Submit a question", new_question_url %></p>
+         <% unless my_page? %>
+           <p><%= link_to "Message me!", new_user_message_url(@user) %></p>
+         <% end%>
+       </article>
+     </div>
    </section>
 </body>
 

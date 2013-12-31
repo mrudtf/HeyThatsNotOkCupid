@@ -1,3 +1,4 @@
+<%= link_to "About", "#" %><span>Questions</span>
 <% if @user == current_user %>
   <%= render "responses/users_responses", responses: @responses, unanswered_question:
      @unanswered_question %>

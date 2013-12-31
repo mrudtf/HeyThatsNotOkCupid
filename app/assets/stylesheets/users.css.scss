@@ -42,6 +42,26 @@
   }
 }
 
+.show_profile {
+  #profile {
+    display: block;
+  }
+
+  #questions {
+    display: none;
+  }
+}
+
+.show_questions {
+  #profile {
+    display: none;
+  }
+
+  #questions {
+    display: block;
+  }
+}
+
 #profile, #questions {
   width: 485px;
   float: left;

@@ -1,4 +1,4 @@
-<h1>Questions</h1>
+
 
 
 <!-- DOES NOT REDIRECT -->
@@ -38,7 +38,6 @@ $(document).ready(function() {
   });
 
   $("#already_answered").on("ajax:success", ".edit_response_form", function(event, data) {
-    alert("response edited, dawg!");
     var $questionDiv = $(event.currentTarget).parent().parent();
     var $response = $questionDiv.find(".response");
     var updatedResponse = $(data).filter("#users_page").html();
@@ -48,9 +47,9 @@ $(document).ready(function() {
     $questionDiv.addClass("show_response");
   });
 
-  $(".new_response_form").on("ajax:success", function(event, data) {
-    $("#already_answered").append($(data).filter("#new_response").html());
-    $("#unanswered_question").html($(data).filter("#unanswered_question").html());
+  $("#unanswered_question").on("ajax:success", ".new_response_form",
+   function(event, data) { $("#already_answered").append($(data).filter("#new_response").html());
+     $("#unanswered_question").html($(data).filter("#unanswered_question").html());
   });
 });
 </script>
