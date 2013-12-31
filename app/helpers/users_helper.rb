@@ -76,6 +76,6 @@ module UsersHelper
       friend = (friend_numerator * 100) / friend_denominator
     end
 
-    {match: match, friend: friend}
+    {match: match, friend: friend, enemy: ((100 - match) * 0.8).to_i }
   end
 end
