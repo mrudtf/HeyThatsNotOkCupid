@@ -36,14 +36,14 @@
        <div id='map'></div>
      </div>
 
-     <article id="details" class="group">
+     <article id="details" >
         <%= render "details/show", detail: @user.detail %>
         <% if my_page? %>
           <%= link_to "Edit details", edit_detail_url(@user) %>
         <% end %>
      </article>
 
-     <div id="profile_or_questions" class="show_questions">
+     <div id="profile_or_questions" class="show_profile">
        <article id="profile">
           <%= render "profiles/show", profile: @user.profile %>
        </article>
@@ -52,8 +52,8 @@
          <%= render "responses/index" %>
          <p><%= link_to "Submit a question", new_question_url %></p>
          <% unless my_page? %>
-           <p><%= link_to "Message me!", new_user_message_url(@user) %></p>
-         <% end%>
+           <%= link_to "Message me!", new_user_message_url(@user) %>
+         <% end %>
        </article>
      </div>
    </section>
@@ -74,4 +74,16 @@
           description: '<%= @user.name %> is right here, right now.'
       }
   }).addTo(map);
+
+  $("#show_profile_link").on("click", function(event) {
+    event.preventDefault();
+    $("#profile_or_questions").removeClass("show_questions");
+    $("#profile_or_questions").addClass("show_profile");
+  });
+
+  $("#show_questions_link").on("click", function(event) {
+    event.preventDefault();
+    $("#profile_or_questions").addClass("show_questions");
+    $("#profile_or_questions").removeClass("show_profile");
+  });
 </script>

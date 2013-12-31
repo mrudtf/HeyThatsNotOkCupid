@@ -1,4 +1,4 @@
-<span>About</span><%= link_to "Questions", "#" %>
+<span>About</span><%= link_to "Questions", "#", id: "show_questions_link" %>
 
 <div class="show_essay">
   <div class="essay" id="summary">
@@ -95,7 +95,12 @@
       <p><input type="submit" value="Ok!"></p>
     </form>
   <% end %>
+
 </div>
+
+<% unless my_page? %>
+  <%= link_to "Message me!", new_user_message_url(@user) %>
+<% end %>
 
 <script>
 $(".show_essay").on("click", ".edit_button", function(event) {

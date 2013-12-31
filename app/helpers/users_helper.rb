@@ -17,10 +17,15 @@ module UsersHelper
     if current_user.orientation == "Straight"
       current_user.gender == "M" ? search_gen = "F" : search_gen = "M"
       people = User.where(gender: search_gen, orientation: ["Straight",
-         "Bisexual"])
+         "Bisexual"]).where("age >= :min_age AND age <= :max_age",
+    {min_age: current_user.profile.min_age,
+     max_age: current_user.profile.max_age})
     elsif current_user.orientation == "Gay"
       current_user.gender == "F" ? search_gen = "F" : search_gen = "M"
       people = User.where(gender: search_gen, orientation: ["Gay", "Bisexual"])
+      .where("age >= :min_age AND age <= :max_age",
+    {min_age: current_user.profile.min_age,
+     max_age: current_user.profile.max_age})
     elsif current_user.orientation == "Bisexual"
       current_user.gender == "M" ? search_gens = ["M","F"] : search_gens =
        ["F","M"]

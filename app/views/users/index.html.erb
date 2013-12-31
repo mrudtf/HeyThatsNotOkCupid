@@ -4,9 +4,10 @@
 
   <!-- Make JS-based filter? -->
   <p>Showing matches for a <%= current_user.orientation.downcase %>
-    <%= current_user.gender %></p>
+    <%= current_user.gender %> between the ages of <%= current_user.profile.min_age%> and <%= current_user.profile.max_age %></p>
 
   <div id="users">
+    <%= "No matches!" if @users.empty? %>
     <% @users.each do |user| %>
       <div class="user group">
         <%= image_tag user.photo.url(:big) %>
