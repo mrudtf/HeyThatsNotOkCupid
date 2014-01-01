@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <section id="content">
+  <section id="content" class="group">
     <% if flash[:errors] %>
       <% flash[:errors].each do |error| %>
         <p><%= error %></p>
