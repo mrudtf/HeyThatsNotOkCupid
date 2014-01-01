@@ -47,6 +47,19 @@ ul, li {
 
 a {
   text-decoration: none;
+
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: pink;
 }
 
 /* --- Helper methods (clearfix) --- */

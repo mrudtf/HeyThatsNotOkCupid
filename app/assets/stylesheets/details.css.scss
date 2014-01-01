@@ -1,3 +1,28 @@
 // Place all the styles related to the Details controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#details_form {
+  width: 430px;
+  float: left;
+  padding: 15px;
+  margin: 0px 125px;
+  background: lightblue;
+  border-radius: 7px;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  p {
+    label {
+      width: 180px;
+      display: inline-block;
+    }
+
+    select {
+
+    }
+  }
+}
