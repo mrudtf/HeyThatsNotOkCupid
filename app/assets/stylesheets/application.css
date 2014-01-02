@@ -50,18 +50,6 @@ a {
 
 }
 
-a:link {
-  color: black;
-}
-
-a:visited {
-  color: red;
-}
-
-a:hover {
-  color: pink;
-}
-
 /* --- Helper methods (clearfix) --- */
 
 .group:after {
@@ -72,7 +60,19 @@ a:hover {
 
 /* Application (always displayed) */
 html {
-/*  background: #3764ED;*/
+  background: #2337AD;
+}
+
+a:link {
+  color: black;
+}
+
+a:visited {
+  color: red;
+}
+
+a:hover {
+  color: pink;
 }
 
 .match_percentage {
@@ -103,12 +103,18 @@ html {
   width: 202px;
   float: left;
   height: 400px;
-  background: green;
-  border-radius: 7px;
+  background: #3F5AF2;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .sidenav ul li {
-  margin: 10px 15px;
+  border-bottom: 1px solid darkblue;
+}
+
+.sidenav ul li a {
+  padding: 10px 15px;
+  display: inline-block;
 }
 
 #recently_visited {
@@ -134,14 +140,17 @@ html {
 #content {
   width: 960px;
   margin: auto;
-  border: 1px solid gray;
   border-top: 0;
 }
 
 .header-wrap {
-  border: 1px solid gray;
-  border-top: 0;
-  border-radius: 7px;
+  max-width: 960px;
+  margin: auto;
+}
+
+header {
+  background: #4D62D6;
+  border-bottom: 1px solid darkblue;
 }
 
 .page {
