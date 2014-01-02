@@ -61,6 +61,7 @@ a {
 /* Application (always displayed) */
 html {
   background: #2337AD;
+  overflow-y: scroll;
 }
 
 a:link {

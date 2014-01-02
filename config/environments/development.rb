@@ -37,7 +37,6 @@ HeyThatsNotOkCupid::Application.configure do
 
   # Paperclip with AWS S3
   config.paperclip_defaults = {
-    command_path: "C:\Program Files\ImageMagick-6.8.8-Q16",
     storage: :s3,
     s3_credentials: {
       bucket: "okcdevelopment",
