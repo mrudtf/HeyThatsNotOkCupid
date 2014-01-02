@@ -5,7 +5,6 @@
 // Show page
 
 #profile_header {
-  background: blue;
   border-radius: 7px;
 
   img {
@@ -21,7 +20,6 @@
       width: 110px;
       height: 100%;
       margin: 15px;
-      border-radius: 7px;
 
       li {
         padding: 5px 8px;
@@ -63,11 +61,12 @@
 }
 
 #profile, #questions {
-  width: 512px;
+  width: 518px;
   float: left;
   padding: 15px;
-  border-radius: 7px;
   background: #88A4F7;
+  border-radius: 5px;
+  border-top-left-radius: 0px;
 }
 
 #message_link {
@@ -78,8 +77,10 @@
   width: 180px;
   float: right;
   padding: 15px;
-  background: lightgreen;
-  border-radius: 7px;
+  background: #3F5AF2;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-top: 60px;
 
   h4 {
     font-weight: bold;
@@ -102,129 +103,6 @@
 
     td.detail_name {
       padding: 5px 10px 5px 5px;
-    }
-  }
-}
-
-// Matches and Visitors (index) pages
-
-#matches, #visitors {
-  background: lightblue;
-  border-radius: 7px;
-  float: left;
-  padding: 15px;
-  width: 728px;
-
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #316BA8;
-  }
-
-  #users {
-    background: lightgreen;
-    border-radius: 7px;
-
-    .user {
-      margin: 15px 15px 0px 15px;
-      background: #5AB9D6;
-      border-radius: 7px;
-
-      h2 {
-        font-size: 1.3em;
-        margin-bottom: 8px;
-      }
-
-      h3 {
-        margin-bottom: 4px;
-      }
-
-      img {
-        float: left;
-        padding: 15px;
-      }
-
-      .user_info {
-        float: left;
-        padding-top: 15px;
-      }
-    }
-  }
-}
-
-// Questions tab (when that exists)
-.answer_form {
-  display: none;
-}
-
-.answer_comparison {
-  display: none;
-}
-
-.answer_link {
-  display: none;
-}
-
-.show_answer_link {
-  .answer_link {
-    display: block;
-  }
-}
-
-.show_answer_form {
-  .answer_form {
-    display: block;
-  }
-}
-
-.show_answer_comparison {
-  .answer_comparison {
-    display: block;
-  }
-}
-
-#questions {
-  .form {
-    display: none;
-  }
-
-  .response {
-    display: none;
-  }
-
-  .show_response {
-    .response {
-      display: block;
-    }
-  }
-
-  .show_form {
-    .form {
-      display: block;
-    }
-  }
-}
-
-// Profile
-
-#profile {
-  .essay {
-    display: none;
-  }
-
-  .form {
-    display: none;
-  }
-
-  .show_essay {
-    .essay {
-      display: block;
-    }
-  }
-
-  .show_form {
-    .form {
-      display: block;
     }
   }
 }

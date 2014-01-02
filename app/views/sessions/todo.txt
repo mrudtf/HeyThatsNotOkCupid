@@ -1,3 +1,5 @@
+- use twilio to text someone`s address
+- add visit frequency
 
 - add profile/detail uniqueness constraints
 

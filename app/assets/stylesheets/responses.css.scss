@@ -1,3 +1,57 @@
 // Place all the styles related to the Responses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+// Questions tab
+.answer_form {
+  display: none;
+}
+
+.answer_comparison {
+  display: none;
+}
+
+.answer_link {
+  display: none;
+}
+
+.show_answer_link {
+  .answer_link {
+    display: block;
+  }
+}
+
+.show_answer_form {
+  .answer_form {
+    display: block;
+  }
+}
+
+.show_answer_comparison {
+  .answer_comparison {
+    display: block;
+  }
+}
+
+#questions {
+  .form {
+    display: none;
+  }
+
+  .response {
+    display: none;
+  }
+
+  .show_response {
+    .response {
+      display: block;
+    }
+  }
+
+  .show_form {
+    .form {
+      display: block;
+    }
+  }
+}

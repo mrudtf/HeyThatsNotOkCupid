@@ -21,29 +21,31 @@
       <% if current_user %>
         <nav class="topnav">
           <ul>
-            <li><%= link_to current_user.name, user_url(current_user) %></li>
-            <li><%= button_to "Log Out", "/session", method: "delete" %></li>
+            <li>Hello, <%= link_to current_user.name + "!", user_url(current_user) %></li>
+            <li><%= button_to "Log Out", "/session", method: "delete", class: "button" %></li>
           </ul>
         </nav>
       </div>
     </header>
-    
+
     <section id="content" class="group">
-      <nav class="sidenav">
-        <ul class="group">
-          <li><%= link_to "Matches", users_url %></li>
-          <li><%= link_to "Messages", conversations_url %></li>
-          <li><%= link_to "Visitors", user_visits_url(current_user) %></li>
-          <li id="recently_visited" class="group">
-            <p>Recently Visited</p>
-            <ul>
-              <% recently_visited.each do |user| %>
-                <li><%= link_to (image_tag user.photo.url(:small)), user_url(user) %></li>
-              <% end %>
-            </ul>
-          </li>
-        </ul>
-      </nav>
+      <div class="sidenav_wrap">
+        <nav class="sidenav">
+          <ul class="group">
+            <li><%= link_to "Matches", users_url %></li>
+            <li><%= link_to "Messages", conversations_url %></li>
+            <li><%= link_to "Visitors", user_visits_url(current_user) %></li>
+            <li id="recently_visited" class="group">
+              <p>Recently Visited</p>
+              <ul>
+                <% recently_visited.each do |user| %>
+                  <li><%= link_to (image_tag user.photo.url(:small)), user_url(user) %></li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
     <% else %>
       </div>
     </header>

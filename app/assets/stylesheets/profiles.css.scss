@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+// Profile
+
 #profile {
   h3 {
     font-weight: bold;
@@ -11,5 +14,25 @@
 
   p {
     margin: 5px 0;
+  }
+  
+  .essay {
+    display: none;
+  }
+
+  .form {
+    display: none;
+  }
+
+  .show_essay {
+    .essay {
+      display: block;
+    }
+  }
+
+  .show_form {
+    .form {
+      display: block;
+    }
   }
 }
