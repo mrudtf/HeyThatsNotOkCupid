@@ -1,47 +1,49 @@
-<% responses.each do |response| %>
-  <div id="question_<%= response.question.id %>_response">
-    <% if my_response(response.question.id) %>
-      <div class="show_answer_comparison">
-        <div class="answer_form">
-          <%= render "responses/edit", response: my_response(response.question.id), question: response.question %>
-        </div>
-        <div class="answer_comparison">
-          <strong><%= response.question.body %></strong>
-          <p><%= image_tag response.user.photo.url(:small) %> <%= response.answer.body %></p>
-          <% unless response.explanation == "" %>
-            <p>"<%= response.explanation %>"</p>
-          <% end %>
-          <div class="my_answer">
-            <p><%= image_tag current_user.photo.url(:small) %> <%= my_response(response.question.id).answer.body %></p>
-            <% unless my_response(response.question.id).explanation == "" %>
-              <p>"<%= my_response(response.question.id).explanation %>"</p>
+<div id="responses">
+  <% responses.each do |response| %>
+    <div id="question_<%= response.question.id %>_response" class="question_response">
+      <% if my_response(response.question.id) %>
+        <div class="show_answer_comparison">
+          <div class="answer_form">
+            <%= render "responses/edit", response: my_response(response.question.id), question: response.question %>
+          </div>
+          <div class="answer_comparison">
+            <strong><%= response.question.body %></strong>
+            <p><%= image_tag response.user.photo.url(:small) %> <%= response.answer.body %></p>
+            <% unless response.explanation == "" %>
+              <p class="explanation">"<%= response.explanation %>"</p>
             <% end %>
-            <p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)), class: "reanswer_button" %></p>
+            <div class="my_answer">
+              <p><%= image_tag current_user.photo.url(:small) %> <%= my_response(response.question.id).answer.body %></p>
+              <% unless my_response(response.question.id).explanation == "" %>
+                <p>"<%= my_response(response.question.id).explanation %>"</p>
+              <% end %>
+              <p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)), class: "reanswer_button" %></p>
+            </div>
           </div>
         </div>
-      </div>
-    <% else %>
-      <div class="show_answer_link">
-        <div class="answer_link">
-          <strong><%= response.question.body %></strong>
-          <p><%= link_to "Answer", new_response_url(response.question), class: "answer_button" %></p>
-        </div>
-        <div class="answer_form">
-          <%= render "responses/new", question: (response.question) %>
-        </div>
-        <div class="answer_comparison">
-          <strong><%= response.question.body %></strong>
-          <p><%= image_tag response.user.photo.url(:small) %> <%= response.answer.body %></p>
-          <% unless response.explanation == "" %>
-            <p>"<%= response.explanation %>"</p>
-          <% end %>
-          <div class="my_answer">
+      <% else %>
+        <div class="show_answer_link">
+          <div class="answer_link">
+            <strong><%= response.question.body %></strong>
+            <p><%= link_to "Answer", new_response_url(response.question), class: "answer_button" %></p>
+          </div>
+          <div class="answer_form">
+            <%= render "responses/new", question: (response.question) %>
+          </div>
+          <div class="answer_comparison">
+            <strong><%= response.question.body %></strong>
+            <p><%= image_tag response.user.photo.url(:small) %> <%= response.answer.body %></p>
+            <% unless response.explanation == "" %>
+              <p class="explanation">"<%= response.explanation %>"</p>
+            <% end %>
+            <div class="my_answer">
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
 <script>
 $(document).ready(function(event) {

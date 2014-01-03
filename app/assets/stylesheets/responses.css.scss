@@ -54,4 +54,27 @@
       display: block;
     }
   }
+
+  .question_response {
+    padding: 5px 10px;
+    border: 1px solid #88A4F7;
+    border-top: 0;
+    background: #B8DBFF;
+
+    strong {
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  }
+
+  .question_response:first-child {
+   border-top: 1px solid #88A4F7;
+   border-top-left-radius: 5px;
+   border-top-right-radius: 5px;
+  }
+
+  .question_response:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
 }

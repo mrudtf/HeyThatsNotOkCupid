@@ -73,12 +73,12 @@
 
 <div class="show_essay">
   <div class="essay" id="ages">
-    <p>Looking for <%= looking_for %> aged <%= profile.min_age %> to <%= profile.max_age %></p>
+    <p class="looking_for">Looking for <%= looking_for %> aged <%= profile.min_age %> to <%= profile.max_age %></p>
     <%= link_to "Edit", "#", class: "edit_button" if profile.user == current_user %>
   </div>
   <% if profile.user == current_user %>
     <form action="<%= profile_url(current_user) %>" method="post"
-      class="form" data-remote="true">
+      class="form looking_for" data-remote="true">
       <input type='hidden' name='_method' value='put'>
       <p>
         <label for="profile_min_age">I'm interested in people </label>

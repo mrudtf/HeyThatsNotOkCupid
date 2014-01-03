@@ -6,7 +6,7 @@
 // Profile
 
 #profile {
-  h3 {
+  h3, .looking_for {
     font-weight: bold;
     font-size: 1.1em;
     padding: 5px 0;
@@ -15,7 +15,7 @@
   p {
     margin: 5px 0;
   }
-  
+
   .essay {
     display: none;
   }
@@ -35,4 +35,6 @@
       display: block;
     }
   }
+
+
 }

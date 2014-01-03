@@ -1,7 +1,7 @@
 <div id="others_page">
   <p><%= image_tag current_user.photo.url(:small) %> <%= my_resp.answer.body %></p>
   <% unless my_resp.explanation == "" %>
-    <p>"<%= my_resp.explanation %>"</p>
+    <p class="explanation">"<%= my_resp.explanation %>"</p>
   <% end %>
   <p><%= link_to "Re-answer", edit_response_url(my_resp), class: "reanswer_button" %></p>
 </div>
@@ -10,7 +10,7 @@
   <p><strong><%= my_resp.question.body %></strong></p>
   <p><%= my_resp.answer.body %></p>
   <% unless my_resp.explanation == "" %>
-  <p>"<%= my_resp.explanation %>"</p>
+  <p class="explanation">"<%= my_resp.explanation %>"</p>
   <% end %>
   <%= link_to "Re-answer", edit_response_url(my_resp), class: "re-answer" %>
 </div>
@@ -21,7 +21,7 @@
       <p><strong><%= my_resp.question.body %></strong></p>
       <p><%= my_resp.answer.body %></p>
       <% unless my_resp.explanation == "" %>
-      <p>"<%= my_resp.explanation %>"</p>
+      <p class="explanation">"<%= my_resp.explanation %>"</p>
       <% end %>
       <%= link_to "Re-answer", edit_response_url(my_resp), class: "re-answer" %>
     </div>

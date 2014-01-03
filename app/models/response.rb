@@ -8,7 +8,7 @@ class Response < ActiveRecord::Base
   belongs_to :question
   belongs_to :answer
 
-  has_many :ok_responses
+  has_many :ok_responses, dependent: :destroy
 
   has_many(
     :ok_answers,
