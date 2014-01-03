@@ -1,26 +1,30 @@
 <% if unanswered_question %>
-  <div id="unanswered_question">
-    <%= render "responses/new", question: unanswered_question %>
+  <div class="show_answer_form">
+    <div id="unanswered_question" class="answer_form">
+      <%= render "responses/new", question: unanswered_question %>
+    </div>
   </div>
 <% end %>
 
 <h2>Already answered</h2>
 <div id="already_answered">
 <% responses.each do |response| %>
-  <div class="show_response">
-    <div class="response">
-      <p><strong><%= response.question.body %></strong></p>
-      <p><%= response.answer.body %></p>
-      <% unless response.explanation == "" %>
-      <p>"<%= response.explanation %>"</p>
-      <% end %>
-      <%= link_to "Re-answer", edit_response_url(response), class: "re-answer" %>
-    </div>
-    <div class="form">
-      <%= render "responses/edit", question: response.question, response: response %>
+  <div id="question_<%= response.question.id %>_response" class="question_response">
+    <div class="show_response">
+      <div class="response">
+        <p><strong><%= response.question.body %></strong></p>
+        <p><%= response.answer.body %></p>
+        <% unless response.explanation == "" %>
+        <p class="explanation">"<%= response.explanation %>"</p>
+        <% end %>
+        <%= link_to "Re-answer", edit_response_url(response), class: "re-answer" %>
+      </div>
+      <div class="form answer_form">
+        <%= render "responses/edit", question: response.question, response: response %>
+      </div>
     </div>
   </div>
-  <% end %>
+<% end %>
 </div>
 
 <script>

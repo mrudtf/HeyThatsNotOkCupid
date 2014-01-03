@@ -15,7 +15,7 @@
             <div class="my_answer">
               <p><%= image_tag current_user.photo.url(:small) %> <%= my_response(response.question.id).answer.body %></p>
               <% unless my_response(response.question.id).explanation == "" %>
-                <p>"<%= my_response(response.question.id).explanation %>"</p>
+                <p class="explanation">"<%= my_response(response.question.id).explanation %>"</p>
               <% end %>
               <p><%= link_to "Re-answer", edit_response_url(my_response(response.question.id)), class: "reanswer_button" %></p>
             </div>
