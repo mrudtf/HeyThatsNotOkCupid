@@ -16,17 +16,19 @@
 </div>
 
 <div id="new_response">
-  <div class="show_response">
-    <div class="response">
-      <p><strong><%= my_resp.question.body %></strong></p>
-      <p><%= my_resp.answer.body %></p>
-      <% unless my_resp.explanation == "" %>
-      <p class="explanation">"<%= my_resp.explanation %>"</p>
-      <% end %>
-      <%= link_to "Re-answer", edit_response_url(my_resp), class: "re-answer" %>
-    </div>
-    <div class="form">
-      <%= render "responses/edit", question: my_resp.question, response: my_resp %>
+  <div id="question_<%= my_resp.question.id %>_response" class="question_response">
+    <div class="show_response">
+      <div class="response">
+        <p><strong><%= my_resp.question.body %></strong></p>
+        <p><%= my_resp.answer.body %></p>
+        <% unless my_resp.explanation == "" %>
+        <p class="explanation">"<%= my_resp.explanation %>"</p>
+        <% end %>
+        <%= link_to "Re-answer", edit_response_url(my_resp), class: "re-answer" %>
+      </div>
+      <div class="form answer_form">
+        <%= render "responses/edit", question: my_resp.question, response: my_resp %>
+      </div>
     </div>
   </div>
 </div>
