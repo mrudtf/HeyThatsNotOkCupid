@@ -1,6 +1,9 @@
 - use twilio to text someone`s address
 - add visit frequency
 
+- really fix up the questions so that it's exactly right wrt picking OkResponses
+- make convos AJAX if possible
+
 - add profile/detail uniqueness constraints
 
 - ask if you broke MVC with looking_for

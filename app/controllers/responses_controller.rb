@@ -17,8 +17,6 @@ class ResponsesController < ApplicationController
     else
       @question = @response.question
       flash[:errors] = @response.errors.full_messages
-
-      render :new
     end
   end
 
