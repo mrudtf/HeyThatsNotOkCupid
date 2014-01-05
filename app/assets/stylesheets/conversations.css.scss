@@ -27,14 +27,21 @@
       .conversation_link {
         background: #B8DBFF;
         border-bottom: 1px solid #88A4F7;
+        padding: 5px 10px;
+
         p {
           font-size: 0.8em;
+        }
+
+        .timestamp {
+          float: right;
         }
       }
 
       .conversation_link:first-child {
         border-top-right-radius: 5px;
         border-top-left-radius: 5px;
+        padding-top: 10px;
       }
 
       .conversation_link:last-child {
@@ -42,6 +49,7 @@
         border-bottom-right-radius: 5px;
         border-bottom: 0;
         margin-bottom: 15px;
+        padding-bottom: 10px;
       }
     }
   }

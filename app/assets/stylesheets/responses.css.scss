@@ -68,14 +68,15 @@
   }
 
   .question_response:first-child {
-   border-top: 1px solid #88A4F7;
    border-top-left-radius: 5px;
    border-top-right-radius: 5px;
+   padding-top: 10px;
   }
 
   .question_response:last-child {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
+    padding-bottom: 10px;
   }
 
   .answer_form {

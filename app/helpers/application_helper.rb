@@ -12,4 +12,8 @@ module ApplicationHelper
 
     recent_visitee_ids.map { |id| User.find(id) }
   end
+
+  def nice_time(timestamp)
+    Time.at(timestamp).utc.strftime("%B %-d at %l:%M %P")
+  end
 end

@@ -2,8 +2,8 @@
 
 <% @messages.each do |message| %>
 <h3>From <%= link_to message.sender.name, user_url(message.sender) %> to
-  <%= link_to message.receiver.name, user_url(message.receiver) %> at
-  <%= message.created_at %></h3>
+  <%= link_to message.receiver.name, user_url(message.receiver) %> on
+  <%= nice_time(message.created_at) %></h3>
 <p><%= message.body %></p>
 <% end %>
 

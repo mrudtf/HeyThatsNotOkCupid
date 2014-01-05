@@ -12,8 +12,9 @@
          <% next if message.nil? %>
 
          <div class="conversation_link">
+           <p class="timestamp"><%= nice_time(message.created_at) %></p>
            <h3><%= image_tag message.sender.photo.url(:small) %> <%= link_to message.sender.name, conversation_url(convo) %></h3>
-           <p>"<%= message.body %>"</p>
+           <p>"<%= message.body[0..175] %><%= "..." if message.body.length > 175 %>"</p>
          </div>
       <% end %>
      </div>
@@ -30,8 +31,9 @@
          <% next if message.nil? %>
 
          <div class="conversation_link">
+           <p class="timestamp"><%= nice_time(message.created_at) %></p>
            <h3><%= image_tag message.receiver.photo.url(:small) %> <%= link_to message.receiver.name, conversation_url(convo) %></h3>
-           <p>"<%= message.body %>"</p>
+           <p>"<%= message.body[0..175] %><%= "..." if message.body.length > 175 %>"</p>
          </div>
 
       <% end %>
