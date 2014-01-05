@@ -1,3 +1,59 @@
 // Place all the styles related to the Conversations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#conversations {
+  margin-top: -90px;
+  float: left;
+  width: 758px;
+
+  h1 {
+    margin: 15px 0px 0px 15px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  #sent, #received {
+    background: #88A4F7;
+
+    .conversation_links {
+      margin: 0px 15px;
+
+      .conversation_link {
+        background: #B8DBFF;
+        border-bottom: 1px solid #88A4F7;
+        p {
+          font-size: 0.8em;
+        }
+      }
+
+      .conversation_link:first-child {
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+      }
+
+      .conversation_link:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-bottom: 0;
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  #received {
+    margin-top: 45px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid #3B52DB;
+  }
+
+  #sent {
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}

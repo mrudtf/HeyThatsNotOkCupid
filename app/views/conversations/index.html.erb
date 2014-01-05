@@ -1,29 +1,40 @@
-<h1>Conversations</h1>
-<h2>Received</h2>
+<article id="conversations">
+  <h1>Conversations</h1>
 
-<% @conversations.each do |convo| %>
-  <% message = convo.messages.order("created_at DESC").find do %>
-    <% |msg| msg.receiver_id == current_user.id %>
-  <% end %>
+  <div id="received">
+    <h2>Received</h2>
+    <div class="conversation_links">
+      <% @conversations.each do |convo| %>
+        <% message = convo.messages.order("created_at DESC").find do %>
+          <% |msg| msg.receiver_id == current_user.id %>
+        <% end %>
 
-   <% next if message.nil? %>
+         <% next if message.nil? %>
 
-   <h3><%= link_to message.sender.name, conversation_url(convo) %></h3>
-   <p><%= message.body %></p>
+         <div class="conversation_link">
+           <h3><%= image_tag message.sender.photo.url(:small) %> <%= link_to message.sender.name, conversation_url(convo) %></h3>
+           <p>"<%= message.body %>"</p>
+         </div>
+      <% end %>
+     </div>
+  </div>
 
-<% end %>
+  <div id="sent">
+    <h2>Sent</h2>
+    <div class="conversation_links">
+      <% @conversations.each do |convo| %>
+        <% message = convo.messages.order("created_at DESC").find do %>
+          <% |msg| msg.sender_id == current_user.id %>
+        <% end %>
 
-<br>
-<h2>Sent</h2>
+         <% next if message.nil? %>
 
-<% @conversations.each do |convo| %>
-  <% message = convo.messages.order("created_at DESC").find do %>
-    <% |msg| msg.sender_id == current_user.id %>
-  <% end %>
+         <div class="conversation_link">
+           <h3><%= image_tag message.receiver.photo.url(:small) %> <%= link_to message.receiver.name, conversation_url(convo) %></h3>
+           <p>"<%= message.body %>"</p>
+         </div>
 
-   <% next if message.nil? %>
-
-   <h3><%= link_to message.receiver.name, conversation_url(convo) %></h3>
-   <p><%= message.body %></p>
-
-<% end %>
+      <% end %>
+    </div>
+  </div>
+</article>
