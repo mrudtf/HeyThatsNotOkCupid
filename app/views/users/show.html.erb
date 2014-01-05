@@ -27,13 +27,13 @@
 
                <!-- Add miles away -->
              <% unless @user == current_user %>
-               <li id="distance"><%= current_user.distance_from(@user).round(2) %> miles away</li>
+               <li id="distance"><%= @user.address %> (<%= current_user.distance_from(@user).round(2) %> miles away)</li>
              <% end %>
            </ul>
 
          </div>
        </article>
-       <div id='map'></div>
+       <div id='map' title="<%= @user.address %>"></div>
      </div>
 
      <article id="details" >

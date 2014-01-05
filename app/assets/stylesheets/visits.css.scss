@@ -6,25 +6,25 @@
 
 #matches, #visitors {
 
-  border-radius: 7px;
   float: left;
   width: 758px;
   margin-top: -90px;
 
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: #3F5AF2;
+  .matches_or_visits_header {
+    h1 {
+      font-size: 36px;
+      font-weight: bold;
+    }
+
+    margin: 15px 0px 0px 15px;
   }
 
   #users {
-    background: lightgreen;
-    border-radius: 7px;
+    margin-top: 45px;
 
     .user {
-      margin: 15px 15px 0px 15px;
-      background: #5AB9D6;
-      border-radius: 7px;
+      background: #88A4F7;
+      border-bottom: 1px solid #3B52DB;
 
       h2 {
         font-size: 1.3em;
@@ -44,6 +44,16 @@
         float: left;
         padding-top: 15px;
       }
+    }
+
+    .user:first-child {
+      border-top-right-radius: 5px;
+    }
+
+    .user:last-child {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+      border-bottom: 0;
     }
   }
 }

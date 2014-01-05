@@ -1,11 +1,11 @@
 <article id="matches">
-  <h1>Matches</h1>
+  <div class="matches_or_visits_header">
+    <h1>Matches</h1>
 
-
-  <!-- Make JS-based filter? -->
-  <p>Showing matches for a <%= current_user.orientation.downcase %>
-    <%= current_user.gender %> between the ages of <%= current_user.profile.min_age%> and <%= current_user.profile.max_age %></p>
-
+    <!-- Make JS-based filter? -->
+    <p>Showing matches for a <%= current_user.orientation.downcase %>
+      <%= current_user.gender %> between the ages of <%= current_user.profile.min_age%> and <%= current_user.profile.max_age %></p>
+  </div>
   <div id="users">
     <%= "No matches!" if @users.empty? %>
     <% @users.each do |user| %>
