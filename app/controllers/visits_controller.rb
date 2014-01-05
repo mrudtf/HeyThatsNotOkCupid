@@ -1,5 +1,5 @@
 class VisitsController < ApplicationController
   def index
-    @users = recent_visitors
+    @visits = recent_visits
   end
 end

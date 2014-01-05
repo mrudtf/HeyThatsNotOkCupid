@@ -1,6 +1,8 @@
 - use twilio to text someone`s address
 - add visit frequency
 
+- paginate the questions with kaminari
+
 - really fix up the questions so that it's exactly right wrt picking OkResponses
 - make convos AJAX if possible
 

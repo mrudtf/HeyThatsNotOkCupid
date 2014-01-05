@@ -4,15 +4,17 @@
   </div>
 
   <div id="users">
-    <% @users.each do |user| %>
+    <% @visits.each do |visit| %>
       <div class="user group">
-        <%= image_tag user.photo.url(:big) %>
+        <%= image_tag visit.visitor.photo.url(:big) %>
+        <p class="timestamp"><%= nice_time(visit.created_at) %></p>
         <div class="user_info">
-          <h2><%= link_to user.name, user_url(user) %></h2>
-          <h3><%= user.age %> / <%= user.gender %> / <%= user.orientation %></h3>
-          <h3 class="match_percentage"><%= match(user)[:match] %>% Match</h3>
-          <h3 class="friend_percentage"><%= match(user)[:friend] %>% Friend</h3>
-          <h3><%= current_user.distance_from(user).round(2) %> miles away</h3>
+          <h2><%= link_to visit.visitor.name, user_url(visit.visitor) %></h2>
+          <h3><%= visit.visitor.age %> / <%= visit.visitor.gender %> / <%= visit.visitor.orientation %></h3>
+          <h3 class="match_percentage"><%= match(visit.visitor)[:match] %>% Match</h3>
+          <h3 class="friend_percentage"><%= match(visit.visitor)[:friend] %>% Friend</h3>
+          <h3 class="enemy_percentage"><%= match(visit.visitor)[:enemy] %>% Enemy</h3>
+          <h3><%= current_user.distance_from(visit.visitor).round(2) %> miles away</h3>
         </div>
       </div>
     <% end %>
