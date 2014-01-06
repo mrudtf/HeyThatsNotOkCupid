@@ -1,106 +1,107 @@
-<span>About</span><%= link_to "Questions", "#", id: "show_questions_link" %>
-
-<div class="show_essay">
-  <div class="essay" id="summary">
-    <% if (profile.user == current_user) || !profile.summary.empty?  %>
-    <% profile.summary.empty? ? button_text = "Fill out this essay!" : button_text = "Edit" %>
-      <h3>My self-summary</h3>
-      <p><%= profile.summary %></p>
-      <%= link_to button_text, "#", class: "edit_button" if profile.user == current_user %>
-    <% end %>
+<div id="essays">
+  <div class="show_essay">
+    <div class="essay" id="summary">
+      <% if (profile.user == current_user) || !profile.summary.empty?  %>
+      <% profile.summary.empty? ? button_text = "Fill out this essay!" : button_text = "Edit" %>
+        <h3>My self-summary</h3>
+        <p><%= profile.summary %></p>
+        <%= link_to button_text, "#", class: "edit_button" if profile.user == current_user %>
+      <% end %>
+    </div>
+      <% if profile.user == current_user %>
+        <form action="<%= profile_url(current_user) %>" method="post"
+          class="form" data-remote="true">
+          <input type='hidden' name='_method' value='put'>
+          <h3><label for="profile_summary">My self-summary</label></h3>
+          <p>
+            <textarea rows="7" cols="50" name="profile[summary]"
+             id="profile_summary"><%= profile.summary %></textarea>
+          </p>
+          <p><input type="submit" value="Ok!"></p>
+        </form>
+      <% end %>
   </div>
+
+
+  <div class="show_essay">
+    <div class="essay" id="job">
+      <% if (profile.user == current_user) || !profile.job.empty?  %>
+      <% profile.job.empty? ? button_text = "Fill out this essay!" : button_text = "Edit" %>
+      <h3>What I'm doing with my life</h3>
+      <p><%= profile.job %></p>
+        <%= link_to button_text, "#", class: "edit_button" if profile.user == current_user %>
+      <% end %>
+    </div>
+      <% if profile.user == current_user %>
+        <form action="<%= profile_url(current_user) %>" method="post"
+          class="form" data-remote="true">
+          <input type='hidden' name='_method' value='put'>
+          <h3><label for="profile_job">What I'm doing with my life</label></h3>
+          <p>
+            <textarea rows="7" cols="50" name="profile[job]"
+             id="profile_job"><%= profile.job %></textarea>
+          </p>
+          <p><input type="submit" value="Ok!"></p>
+        </form>
+      <% end %>
+  </div>
+
+  <div class="show_essay">
+    <div class="essay" id="likes">
+      <% if (profile.user == current_user) || !profile.likes.empty?  %>
+      <% profile.likes.empty? ? button_text = "Fill out this essay!" : button_text = "Edit" %>
+      <h3>Favorite books, movies, shows, music, and food</h3>
+      <p><%= profile.likes %></p>
+        <%= link_to button_text, "#", class: "edit_button" if profile.user == current_user %>
+      <% end %>
+    </div>
+      <% if profile.user == current_user %>
+        <form action="<%= profile_url(current_user) %>" method="post"
+          class="form" data-remote="true">
+          <input type='hidden' name='_method' value='put'>
+          <h3><label for="profile_likes">Favorite books, movies, shows, music, and
+            food</label></h3>
+          <p>
+            <textarea rows="7" cols="50" name="profile[likes]"
+             id="profile_likes"><%= profile.likes %></textarea>
+          </p>
+          <p><input type="submit" value="Ok!"></p>
+        </form>
+      <% end %>
+  </div>
+
+  <div class="show_essay">
+    <div class="essay" id="ages">
+      <p class="looking_for">Looking for <%= looking_for %> aged <%= profile.min_age %> to <%= profile.max_age %></p>
+      <%= link_to "Edit", "#", class: "edit_button" if profile.user == current_user %>
+    </div>
     <% if profile.user == current_user %>
       <form action="<%= profile_url(current_user) %>" method="post"
-        class="form" data-remote="true">
+        class="form looking_for" data-remote="true">
         <input type='hidden' name='_method' value='put'>
-        <h3><label for="profile_summary">My self-summary</label></h3>
         <p>
-          <textarea rows="7" cols="50" name="profile[summary]"
-           id="profile_summary"><%= profile.summary %></textarea>
+          <label for="profile_min_age">I'm interested in people </label>
+          <input type="number" name="profile[min_age]" value="<%= profile.min_age %>"
+            id="profile_min_age">
+          <label for="profile_max_age">to </label>
+          <input type="number" name="profile[max_age]" value="<%= profile.max_age %>"
+            id="profile_max_age"> years old,
+          <label for="profile_max_distance">living up to </label>
+          <input type="number" name="profile[max_distance]"
+            value="<%= profile.max_distance %>" id="profile_max_distance">
+          miles away
         </p>
         <p><input type="submit" value="Ok!"></p>
       </form>
     <% end %>
-</div>
 
-
-<div class="show_essay">
-  <div class="essay" id="job">
-    <% if (profile.user == current_user) || !profile.job.empty?  %>
-    <% profile.job.empty? ? button_text = "Fill out this essay!" : button_text = "Edit" %>
-    <h3>What I'm doing with my life</h3>
-    <p><%= profile.job %></p>
-      <%= link_to button_text, "#", class: "edit_button" if profile.user == current_user %>
-    <% end %>
   </div>
-    <% if profile.user == current_user %>
-      <form action="<%= profile_url(current_user) %>" method="post"
-        class="form" data-remote="true">
-        <input type='hidden' name='_method' value='put'>
-        <h3><label for="profile_job">What I'm doing with my life</label></h3>
-        <p>
-          <textarea rows="7" cols="50" name="profile[job]"
-           id="profile_job"><%= profile.job %></textarea>
-        </p>
-        <p><input type="submit" value="Ok!"></p>
-      </form>
-    <% end %>
-</div>
-
-<div class="show_essay">
-  <div class="essay" id="likes">
-    <% if (profile.user == current_user) || !profile.likes.empty?  %>
-    <% profile.likes.empty? ? button_text = "Fill out this essay!" : button_text = "Edit" %>
-    <h3>Favorite books, movies, shows, music, and food</h3>
-    <p><%= profile.likes %></p>
-      <%= link_to button_text, "#", class: "edit_button" if profile.user == current_user %>
-    <% end %>
-  </div>
-    <% if profile.user == current_user %>
-      <form action="<%= profile_url(current_user) %>" method="post"
-        class="form" data-remote="true">
-        <input type='hidden' name='_method' value='put'>
-        <h3><label for="profile_likes">Favorite books, movies, shows, music, and
-          food</label></h3>
-        <p>
-          <textarea rows="7" cols="50" name="profile[likes]"
-           id="profile_likes"><%= profile.likes %></textarea>
-        </p>
-        <p><input type="submit" value="Ok!"></p>
-      </form>
-    <% end %>
-</div>
-
-<div class="show_essay">
-  <div class="essay" id="ages">
-    <p class="looking_for">Looking for <%= looking_for %> aged <%= profile.min_age %> to <%= profile.max_age %></p>
-    <%= link_to "Edit", "#", class: "edit_button" if profile.user == current_user %>
-  </div>
-  <% if profile.user == current_user %>
-    <form action="<%= profile_url(current_user) %>" method="post"
-      class="form looking_for" data-remote="true">
-      <input type='hidden' name='_method' value='put'>
-      <p>
-        <label for="profile_min_age">I'm interested in people </label>
-        <input type="number" name="profile[min_age]" value="<%= profile.min_age %>"
-          id="profile_min_age">
-        <label for="profile_max_age">to </label>
-        <input type="number" name="profile[max_age]" value="<%= profile.max_age %>"
-          id="profile_max_age"> years old,
-        <label for="profile_max_distance">living up to </label>
-        <input type="number" name="profile[max_distance]"
-          value="<%= profile.max_distance %>" id="profile_max_distance">
-        miles away
-      </p>
-      <p><input type="submit" value="Ok!"></p>
-    </form>
-  <% end %>
-
 </div>
 
 <% unless my_page? %>
   <%= link_to "Message me!", new_user_message_url(@user) %>
 <% end %>
+
 
 <script>
 $(".show_essay").on("click", ".edit_button", function(event) {

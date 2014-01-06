@@ -42,6 +42,10 @@
 }
 
 .show_profile {
+  #show_questions_link {
+    background: #3F5AF2;
+  }
+
   #profile {
     display: block;
   }
@@ -52,6 +56,10 @@
 }
 
 .show_questions {
+  #show_profile_link {
+    background: #3F5AF2;
+  }
+
   #profile {
     display: none;
   }

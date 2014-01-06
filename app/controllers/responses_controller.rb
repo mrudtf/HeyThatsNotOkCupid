@@ -3,7 +3,6 @@ class ResponsesController < ApplicationController
     @response = Response.new(params[:response])
     puts request.xhr?
     if @response.save
-      # probably need to make this an entirely different path
       if request.xhr?
         # can't be called response or my_response because those conflict
         unanswered_question = (Question.all -
@@ -11,23 +10,12 @@ class ResponsesController < ApplicationController
         render partial: "comparison", locals: {my_resp: @response,
            unanswered_question: unanswered_question}
       else
-        puts "you did it"
         redirect_to user_url(current_user)
       end
     else
       @question = @response.question
       flash[:errors] = @response.errors.full_messages
     end
-  end
-
-  def index
-    # Moved to user#show for partial
-
-    # @user = User.find(params[:user_id])
-    # @responses = Response.find_all_by_user_id(params[:user_id])
-    # if @user == current_user
-    #   @unanswered_question = (Question.all - @user.answered_questions).first
-    # end
   end
 
   def edit

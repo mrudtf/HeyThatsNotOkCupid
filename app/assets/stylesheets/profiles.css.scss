@@ -5,7 +5,24 @@
 
 // Profile
 
+#tabs {
+  margin-left: 15px;
+
+  > a {
+    border-bottom: 0;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    padding: 7px 7px 0 7px;
+    background: #88A4F7;
+  }
+
+  .inactive {
+    background: black;
+  }
+}
+
 #profile {
+
   h3, .looking_for {
     font-weight: bold;
     font-size: 1.1em;

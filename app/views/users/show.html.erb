@@ -44,6 +44,10 @@
      </article>
 
      <div id="profile_or_questions" class="show_profile">
+       <div id="tabs">
+         <%= link_to "About", "#", id: "show_profile_link" %>
+         <%= link_to "Questions", "#", id: "show_questions_link" %>
+       </div>
        <article id="profile">
           <%= render "profiles/show", profile: @user.profile %>
        </article>
@@ -85,5 +89,6 @@
     event.preventDefault();
     $("#profile_or_questions").addClass("show_questions");
     $("#profile_or_questions").removeClass("show_profile");
+    $("")
   });
 </script>
