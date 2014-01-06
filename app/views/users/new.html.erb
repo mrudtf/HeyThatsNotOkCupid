@@ -1,29 +1,31 @@
-<h1>Sign Up!</h1>
+<div id="signup">
+  <h1>Sign Up!</h1>
 
-<%= form_for @user do |f| %>
-<input type="hidden" value="" id="user_latitude" name="user[latitude]">
-<input type="hidden" value="" id="user_longitude" name="user[longitude]">
+  <%= form_for @user do |f| %>
+  <input type="hidden" value="" id="user_latitude" name="user[latitude]">
+  <input type="hidden" value="" id="user_longitude" name="user[longitude]">
 
-  <p><%= f.label :username %>:
-  <%= f.text_field :name %></p>
+    <p><%= f.label :username %>:
+    <%= f.text_field :name, class: "num_input" %></p>
 
-  <p><%= f.label :password %>:
-  <%= f.password_field :password %></p>
+    <p><%= f.label :password %>:
+    <%= f.password_field :password, class: "num_input" %></p>
 
-  <p><label for="user_gender">
-    <%= f.select :gender, [["I'm a girl", "F"], ["I'm a guy", "M"]] %></label></p>
+    <p><label for="user_gender">
+      <%= f.select :gender, [["I'm a girl", "F"], ["I'm a guy", "M"]], {}, { class: "button" } %></label></p>
 
-  <p><label for "user_orientation">
-    <%= f.select :orientation, [["I'm straight", "Straight"],
-    ["I'm gay", "Gay"], ["I'm bi", "Bisexual"]]%></label></p>
+    <p><label for "user_orientation">
+      <%= f.select :orientation, [["I'm straight", "Straight"],
+      ["I'm gay", "Gay"], ["I'm bi", "Bisexual"]], {}, { class: "button" }%></label></p>
 
-  <p><label for="user_age">I'm </label><%= f.number_field :age %> years old</p>
+    <p><label for="user_age">I'm </label><%= f.number_field :age, class: "num_input" %> years old</p>
 
-  <p><%= f.label :photo %>:
-    <%= f.file_field :photo %></p>
+    <p><%= f.label :photo %>:
+      <%= f.file_field :photo %></p>
 
-  <%= f.submit "Join" %>
-<% end %>
+    <%= f.submit "Join", class: "button" %>
+  <% end %>
+</div>
 
 <script>
 $(document).ready(function() {

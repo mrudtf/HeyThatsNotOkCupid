@@ -17,7 +17,7 @@
             <textarea rows="7" cols="50" name="profile[summary]"
              id="profile_summary"><%= profile.summary %></textarea>
           </p>
-          <p><input type="submit" value="Ok!"></p>
+          <p><input type="submit" value="Ok!" class="button"></p>
         </form>
       <% end %>
   </div>
@@ -41,7 +41,7 @@
             <textarea rows="7" cols="50" name="profile[job]"
              id="profile_job"><%= profile.job %></textarea>
           </p>
-          <p><input type="submit" value="Ok!"></p>
+          <p><input type="submit" value="Ok!" class="button"></p>
         </form>
       <% end %>
   </div>
@@ -65,7 +65,7 @@
             <textarea rows="7" cols="50" name="profile[likes]"
              id="profile_likes"><%= profile.likes %></textarea>
           </p>
-          <p><input type="submit" value="Ok!"></p>
+          <p><input type="submit" value="Ok!" class="button"></p>
         </form>
       <% end %>
   </div>
@@ -81,17 +81,22 @@
         <input type='hidden' name='_method' value='put'>
         <p>
           <label for="profile_min_age">I'm interested in people </label>
-          <input type="number" name="profile[min_age]" value="<%= profile.min_age %>"
-            id="profile_min_age">
+          <input type="number" name="profile[min_age]"
+            value="<%= profile.min_age %>"
+            id="profile_min_age"
+            class="num_input">
           <label for="profile_max_age">to </label>
-          <input type="number" name="profile[max_age]" value="<%= profile.max_age %>"
-            id="profile_max_age"> years old,
+          <input type="number" name="profile[max_age]"
+            value="<%= profile.max_age %>"
+            id="profile_max_age"
+            class="num_input"> years old,
           <label for="profile_max_distance">living up to </label>
           <input type="number" name="profile[max_distance]"
-            value="<%= profile.max_distance %>" id="profile_max_distance">
+            value="<%= profile.max_distance %>" id="profile_max_distance"
+            class="num_input">
           miles away
         </p>
-        <p><input type="submit" value="Ok!"></p>
+        <p><input type="submit" value="Ok!" class="button"></p>
       </form>
     <% end %>
 

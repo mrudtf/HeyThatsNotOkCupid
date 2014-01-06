@@ -96,6 +96,13 @@
   #unanswered_question {
     margin-bottom: 15px;
   }
+
+  .edit_response_form {
+    textarea {
+      background: white;
+      border: none;
+    }
+  }
 }
 
 .explanation {

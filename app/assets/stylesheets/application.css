@@ -176,6 +176,18 @@ header {
   margin-top: -90px;
 }
 
+textarea {
+  background: #B8DBFF;
+  border-radius: 5px;
+  border: 1px solid #88A4F7;
+}
+
+.num_input {
+  background: #B8DBFF;
+  border: none;
+  border-radius: 5px;
+}
+
 /* Buttons */
 
 .button {
@@ -203,12 +215,12 @@ header {
 	display:inline-block;
 	color:#000000;
 	font-family:Arial;
-	font-size:15px;
+	font-size:12px;
 	font-weight:bold;
 	font-style:normal;
-	height:37px;
-	line-height:37px;
-	width:92px;
+	height:25px;
+	line-height:25px;
+	width: 120px;
 	text-decoration:none;
 	text-align:center;
 	text-shadow:1px 1px 0px #1570cd;
@@ -222,4 +234,3 @@ header {
 	position:relative;
 	top:1px;
 }
-/* This button was generated using CSSButtonGenerator.com */
