@@ -10,7 +10,7 @@
     <%= "No matches!" if @users.empty? %>
     <% @users.each do |user| %>
       <div class="user group">
-        <%= image_tag user.photo.url(:big) %>
+        <%= link_to (image_tag user.photo.url(:big)), user_url(user) %>
         <div class="user_info">
           <h2><%= link_to user.name, user_url(user) %></h2>
           <h3><%= user.age %> / <%= user.gender %> / <%= user.orientation %></h3>

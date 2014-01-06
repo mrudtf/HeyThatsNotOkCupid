@@ -6,7 +6,7 @@
   <div id="users">
     <% @visits.each do |visit| %>
       <div class="user group">
-        <%= image_tag visit.visitor.photo.url(:big) %>
+        <%= link_to (image_tag visit.visitor.photo.url(:big)), user_url(visit.visitor) %>
         <p class="timestamp"><%= nice_time(visit.created_at) %></p>
         <div class="user_info">
           <h2><%= link_to visit.visitor.name, user_url(visit.visitor) %></h2>
