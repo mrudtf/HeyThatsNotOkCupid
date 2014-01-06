@@ -22,7 +22,7 @@
         <nav class="topnav">
           <ul>
             <li>Hello, <%= link_to current_user.name + "!", user_url(current_user) %></li>
-            <li><%= button_to "Log Out", "/session", method: "delete", class: "button" %></li>
+            <li><%= button_to "Log Out", "/session", method: "delete", class: "button", id: "logout" %></li>
           </ul>
         </nav>
       </div>

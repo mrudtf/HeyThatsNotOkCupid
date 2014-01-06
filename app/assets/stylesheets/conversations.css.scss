@@ -68,3 +68,42 @@
 
   }
 }
+
+#conversation {
+  background: #88A4F7;
+  width: 758px;
+  float: left;
+  margin-top: -45px;
+  border-radius: 5px;
+
+  #messages {
+    margin: 15px;
+  }
+
+  .message {
+    background: #B8DBFF;
+    border-bottom: 1px solid #88A4F7;
+    padding: 10px;
+
+    h3 {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+  }
+
+  .message:first-child {
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+  }
+
+  .message:last-child {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom: 0;
+    padding-bottom: 10px;
+  }
+
+  form {
+    margin: 15px;
+  }
+}

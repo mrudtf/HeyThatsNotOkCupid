@@ -1,10 +1,13 @@
-<h1>Conversation</h1>
+<article id="conversation">
 
-<% @messages.each do |message| %>
-<h3>From <%= link_to message.sender.name, user_url(message.sender) %> to
-  <%= link_to message.receiver.name, user_url(message.receiver) %> on
-  <%= nice_time(message.created_at) %></h3>
-<p><%= message.body %></p>
-<% end %>
+  <div id="messages">
+    <% @messages.each do |message| %>
+    <article class="message">
+      <h3><%= link_to image_tag(message.sender.photo.url(:small)), user_url(message.sender) %> on <%= nice_time(message.created_at) %>:</h3>
+      <p><%= message.body %></p>
+    </article>
+    <% end %>
+  </div>
 
-<%= render "messages/new", recipient: @recipient %>
+  <%= render "messages/new", recipient: @recipient %>
+</article>
