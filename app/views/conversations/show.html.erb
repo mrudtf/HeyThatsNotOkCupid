@@ -1,5 +1,7 @@
-<article id="conversation">
+<article id="conversation_page">
+<p id="conversation_with">Conversation with <%= other_user(@conversation).name %></p>
 
+<article id="conversation">
   <div id="messages">
     <% @messages.each do |message| %>
     <article class="message">
@@ -10,4 +12,5 @@
   </div>
 
   <%= render "messages/new", recipient: @recipient %>
+</article>
 </article>
