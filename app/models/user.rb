@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
      unacceptable" }
   validates :gender, inclusion: { in: ["M", "F"] }
   validates :orientation, inclusion: { in: ["Straight", "Gay", "Bisexual"] }
+  validates :name, uniqueness: true
 
   after_initialize :ensure_token
 
