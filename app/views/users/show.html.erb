@@ -25,10 +25,11 @@
              <li><%= @user.age %> / <%= @user.gender %> /
                <%= @user.orientation %></li>
 
-               <!-- Add miles away -->
-             <% unless @user == current_user %>
-               <li id="distance"><%= @user.address %> (<%= current_user.distance_from(@user).round(2) %> miles away)</li>
-             <% end %>
+             
+              <li id="distance"><%= @user.address %> 
+                <% unless @user == current_user %>
+                  (<%= current_user.distance_from(@user).round(2) %> miles away)
+                <% end %></li>
            </ul>
 
          </div>

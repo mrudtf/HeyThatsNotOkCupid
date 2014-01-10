@@ -180,6 +180,8 @@ textarea {
   background: #B8DBFF;
   border-radius: 5px;
   border: 1px solid #88A4F7;
+  font-family: sans-serif;
+  width: 100%;
 }
 
 .num_input {

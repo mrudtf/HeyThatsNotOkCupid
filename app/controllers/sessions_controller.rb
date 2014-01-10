@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
       render :new
     else
       self.current_user = user
+      user.update_attributes!(params[:user])
       redirect_to root_url
     end
   end

@@ -3,6 +3,9 @@
 <form action="<%= session_url %>" method="post">
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
+  <input type="hidden" value="" class="user_latitude" name="user[latitude]">
+  <input type="hidden" value="" class="user_longitude" name="user[longitude]">
+
   <p>
     <label for="user_name">Username</label>
     <input id="user_name" name="user[name]" type="text">
@@ -20,8 +23,28 @@
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
     <input value="d" name="user[name]" type="hidden">
     <input value="Password" name="user[password]" type="hidden">
+    <input type="hidden" value="" class="user_latitude" name="user[latitude]">
+    <input type="hidden" value="" class="user_longitude" name="user[longitude]">
 
   <input type="submit" value="Log in as guest">
 </form>
 
 <%= link_to "Sign Up", new_user_url %>
+
+<script>
+$(document).ready(function() {
+  getLocation();
+});
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(assignPosition);
+  }
+  else{ alert("Geolocation is not supported by this browser."); }
+};
+
+function assignPosition(position) {
+  $(".user_latitude").attr("value", position.coords.latitude);
+  $(".user_longitude").attr("value", position.coords.longitude);
+};
+</script>
