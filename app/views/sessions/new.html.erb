@@ -1,35 +1,38 @@
-<h1>Sign In</h1>
+<div id="signin">
+  <h1>Welcome to HeyThatsNotOkCupid,</h1>
+  <h2>a geocoding-enhanced (and therefore stalker-friendly) OkCupid clone that you almost certainly wouldn't want to use in real life.</h2>
 
-<form action="<%= session_url %>" method="post">
-  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+  <form action="<%= session_url %>" method="post">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-  <input type="hidden" value="" class="user_latitude" name="loc[latitude]">
-  <input type="hidden" value="" class="user_longitude" name="loc[longitude]">
-
-  <p>
-    <label for="user_name">Username</label>
-    <input id="user_name" name="user[name]" type="text">
-  </p>
-
-  <p>
-    <label for="user_password">Password</label>
-    <input id="user_password" name="user[password]" type="password">
-  </p>
-
-  <input type="submit" value="Log in">
-</form>
-
-<form action="<%= session_url %>" method="post">
-  <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-    <input value="d" name="user[name]" type="hidden">
-    <input value="Password" name="user[password]" type="hidden">
     <input type="hidden" value="" class="user_latitude" name="loc[latitude]">
     <input type="hidden" value="" class="user_longitude" name="loc[longitude]">
 
-  <input type="submit" value="Log in as guest">
-</form>
+    <p>
+      <label for="user_name">Username</label>
+      <input id="user_name" name="user[name]" type="text" class="num_input">
+    </p>
 
-<%= link_to "Sign Up", new_user_url %>
+    <p>
+      <label for="user_password">Password</label>
+      <input id="user_password" name="user[password]" type="password" class="num_input">
+    </p>
+
+    <input type="submit" value="Log in," class="button">
+  </form>
+
+  <form action="<%= session_url %>" method="post">
+    <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+      <input value="d" name="user[name]" type="hidden">
+      <input value="Password" name="user[password]" type="hidden">
+      <input type="hidden" value="" class="user_latitude" name="loc[latitude]">
+      <input type="hidden" value="" class="user_longitude" name="loc[longitude]">
+
+    <input type="submit" value="log in to the guest account," class="button">
+  </form>
+
+  <%= link_to "or sign up.", new_user_url %>
+</div>
 
 <script>
 $(document).ready(function() {

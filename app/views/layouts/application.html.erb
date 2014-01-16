@@ -7,6 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="wrapper">
+
   <div id="flash">
     <% if flash[:errors] %>
       <% flash[:errors].each do |error| %>
@@ -17,7 +19,7 @@
 
     <header>
       <div class="header-wrap group">
-        <img src="http://i.imgur.com/7TKL0b9.png" id="logo">
+        <img src="https://s3.amazonaws.com/okcprod/public/htnokclogo.png" id="logo">
 
       <% if current_user %>
         <nav class="topnav">
@@ -55,5 +57,18 @@
     <%= yield %>
 
   </section>
+
+  <div id="push"></div>
+
+  </div>
+
+  <footer>
+    <div class="footer_wrap">
+      <ul>
+       <li>Not actually ©2014 <%= link_to "Kiran Helferty", "http://#" %></li>
+       <li><%= link_to (image_tag "https://s3.amazonaws.com/okcprod/public/GitHub-Mark-32px.png"), "http://github.com/kphh/HeyThatsNotOkCupid" %></li>
+      </ul>
+    </div>
+  </footer>
 </body>
 </html>
