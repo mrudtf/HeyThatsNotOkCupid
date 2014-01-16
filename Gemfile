@@ -12,6 +12,7 @@ gem 'aws-sdk'
 gem 'figaro'
 
 gem 'seed_dump', '0.5.3'
+gem 'newrelic_rpm'
 
 gem 'geocoder'
 gem 'mapbox-rails'
