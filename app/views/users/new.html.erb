@@ -12,11 +12,11 @@
     <%= f.password_field :password, class: "num_input" %></p>
 
     <p><label for="user_gender">
-      <%= f.select :gender, [["I'm a girl", "F"], ["I'm a guy", "M"]], {}, { class: "button" } %></label></p>
+      <%= f.select :gender, [["I'm a girl", "F"], ["I'm a guy", "M"]], {}, { class: "num_input" } %></label></p>
 
     <p><label for "user_orientation">
       <%= f.select :orientation, [["I'm straight", "Straight"],
-      ["I'm gay", "Gay"], ["I'm bi", "Bisexual"]], {}, { class: "button" }%></label></p>
+      ["I'm gay", "Gay"], ["I'm bi", "Bisexual"]], {}, { class: "num_input" }%></label></p>
 
     <p><label for="user_age">I'm </label><%= f.number_field :age, class: "num_input" %> years old</p>
 
@@ -24,6 +24,7 @@
       <%= f.file_field :photo %></p>
 
     <%= f.submit "Join", class: "button" %>
+    <p><%= link_to "or sign in.", new_session_url %></p>
   <% end %>
 </div>
 

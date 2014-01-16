@@ -13,12 +13,12 @@
     <p>
       <label for="detail_height">Height (inches)</label>
       <input type="number" name="detail[height]" value="<%= detail.height %>"
-         id="detail_height">
+         id="detail_height" class="num_input">
     </p>
 
     <p>
       <label for="detail_body_type">Body Type</label>
-      <select name="detail[body_type]" id="detail_body_type">
+      <select name="detail[body_type]" id="detail_body_type" class="num_input">
         <option></option>
         <% ["Thin", "Overweight", "Average", "Fit"].each do |body_type| %>
             <option value="<%= body_type %>"
@@ -30,7 +30,7 @@
 
     <p>
       <label for="detail_diet">Diet</label>
-      <select name="detail[diet]" id="detail_diet">
+      <select name="detail[diet]" id="detail_diet" class="num_input">
         <option></option>
         <% ["Anything", "Vegetarian", "Vegan", "Kosher", "Halal",
             "Other"].each do |diet| %>
@@ -43,7 +43,7 @@
 
     <p>
       <label for="detail_smokes">Smokes</label>
-      <select name="detail[smokes]" id="detail_smokes">
+      <select name="detail[smokes]" id="detail_smokes" class="num_input">
         <option></option>
         <% ["Yes", "No", "When drinking", "Trying to quit"].each do |smokes| %>
             <option value="<%= smokes %>"
@@ -55,7 +55,7 @@
 
     <p>
       <label for="detail_drinks">Drinks</label>
-      <select name="detail[drinks]" id="detail_drinks">
+      <select name="detail[drinks]" id="detail_drinks" class="num_input">
         <option></option>
         <% ["Often", "Socially", "Sometimes", "Rarely", "Never"].each do |drinks| %>
             <option value="<%= drinks %>"
@@ -67,7 +67,7 @@
 
     <p>
       <label for="detail_drugs">Drugs</label>
-      <select name="detail[drugs]" id="detail_drugs">
+      <select name="detail[drugs]" id="detail_drugs" class="num_input">
         <option></option>
         <% ["Often", "Sometimes", "Rarely", "Never"].each do |drugs| %>
             <option value="<%= drugs %>"
@@ -79,7 +79,7 @@
 
     <p>
       <label for="detail_religion">Religion</label>
-      <select name="detail[religion]" id="detail_religion">
+      <select name="detail[religion]" id="detail_religion" class="num_input">
         <option></option>
         <% ["Agnosticism", "Atheism", "Buddhism", "Christianity", "Hinduism",
             "Islam", "Judaism", "Other"].each do |religion| %>
@@ -91,7 +91,7 @@
     </p>
 
     <p><label for="detail_sign">Sign</label>
-      <select name="detail[sign]" id="detail_sign">
+      <select name="detail[sign]" id="detail_sign" class="num_input">
         <option></option>
         <% ["Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo",
             "Virgo", "Libra", "Scorpio", "Sagittarius", "Capricorn"].each do |sign| %>
@@ -104,7 +104,7 @@
 
     <p>
       <label for="detail_education">Education Completed</label>
-      <select name="detail[education]" id="detail_education">
+      <select name="detail[education]" id="detail_education" class="num_input">
         <option></option>
         <% ["Grade School", "High School", "College",
             "Graduate School"].each do |education| %>
@@ -117,7 +117,7 @@
 
     <p>
       <label for="detail_job">Job</label>
-      <select name="detail[job]" id="detail_job">
+      <select name="detail[job]" id="detail_job" class="num_input">
         <option></option>
         <% ["Student", "Administrative", "Artist", "Banking", "Computer",
           "Construction", "Education", "Hospitality", "Legal", "Management",
@@ -131,7 +131,7 @@
 
     <p>
       <label for="detail_offspring">Kids</label>
-      <select name="detail[offspring]" id="detail_offspring">
+      <select name="detail[offspring]" id="detail_offspring" class="num_input">
         <option></option>
         <% ["Doesn't want kids", "Doesn't have kids, but wants them",
             "Has kids"].each do |offspring| %>
@@ -144,7 +144,7 @@
 
     <p>
       <label for="detail_pets">Pets</label>
-      <select name="detail[pets]" id="detail_pets">
+      <select name="detail[pets]" id="detail_pets" class="num_input">
         <option></option>
         <% ["Likes cats", "Likes dogs", "Likes cats and dogs"].each do |pets| %>
             <option value="<%= pets %>"
@@ -154,6 +154,6 @@
       </select>
     </p>
 
-    <p><input type="submit" value="Ok!"></p>
+    <p><input type="submit" value="Ok!" class="button"></p>
   </form>
 </article>

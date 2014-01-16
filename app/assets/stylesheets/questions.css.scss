@@ -1,3 +1,33 @@
 // Place all the styles related to the Questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#new_question {
+	h1 {
+		font-size: 36px;
+		font-weight: bold;
+		margin-top: -60px;
+		margin-left: 15px;
+		float: left;
+	}
+
+	form {
+		background: #88A4F7;
+		float: left;
+		min-width: 475px;
+		margin-top: 22px;
+		padding: 15px;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		textarea {
+			margin-right: 3px;
+		}
+	}
+
+  .q_input {
+    background: #B8DBFF;
+    border: none;
+    width: 400px;
+    border-radius: 5px;
+  }
+}

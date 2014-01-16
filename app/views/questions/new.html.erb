@@ -1,19 +1,21 @@
-<h1>Submit a Question</h1>
-<form action="<%= questions_url %>" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <p>
-    <label for="question_body">Question:</label>
-    <input type="text" name="question[body]" id="question_body">
-  </p>
+<div id="new_question">
+  <h1>Submit a Question</h1>
+  <form action="<%= questions_url %>" method="post">
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <p>
+      <label for="question_body">Question:</label>
+      <input type="text" name="question[body]" id="question_body" class="q_input">
+    </p>
 
-  <p>2-4 answers:</p>
+    <p>2-4 answers:</p>
 
-  <% (1..4).each do |i| %>
-  <p>
-    <label for="answers_<%= i %>_body"></label><input type="text"
-      name="answers[<%= i %>][body]" id="answers_<%= i %>_body">
-  </p>
-  <% end %>
+    <% (1..4).each do |i| %>
+    <p>
+      <label for="answers_<%= i %>_body"></label><input type="text"
+        name="answers[<%= i %>][body]" id="answers_<%= i %>_body" class="q_input">
+    </p>
+    <% end %>
 
-  <p><input type="submit" value="Submit"></p>
-</form>
+    <p><input type="submit" value="Submit" class="button"></p>
+  </form>
+</div>

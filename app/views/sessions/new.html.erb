@@ -1,6 +1,6 @@
 <div id="signin">
   <h1>Welcome to HeyThatsNotOkCupid,</h1>
-  <h2>a geocoding-enhanced (and therefore stalker-friendly) OkCupid clone that you almost certainly wouldn't want to use in real life.</h2>
+  <h2>a geocoding-enhanced (and therefore stalker-friendly) OkCupid clone you'd probably have reservations about using in real life.</h2>
 
   <form action="<%= session_url %>" method="post">
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
@@ -23,8 +23,8 @@
 
   <form action="<%= session_url %>" method="post">
     <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
-      <input value="d" name="user[name]" type="hidden">
-      <input value="Password" name="user[password]" type="hidden">
+      <input value="ProspectiveEmployer" name="user[name]" type="hidden">
+      <input value="password" name="user[password]" type="hidden">
       <input type="hidden" value="" class="user_latitude" name="loc[latitude]">
       <input type="hidden" value="" class="user_longitude" name="loc[longitude]">
 

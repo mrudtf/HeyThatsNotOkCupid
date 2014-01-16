@@ -11,6 +11,8 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'figaro'
 
+gem 'seed_dump', '0.5.3'
+
 gem 'geocoder'
 gem 'mapbox-rails'
 

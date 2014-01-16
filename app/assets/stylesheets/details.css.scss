@@ -3,17 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #details_form {
-  width: 430px;
-  float: left;
-  padding: 15px;
-  margin: 30px 125px;
-  background: lightblue;
-  border-radius: 5px;
-
   h1 {
-    font-size: 24px;
-    font-weight: bold;
+		font-size: 36px;
+		font-weight: bold;
+		margin-top: -60px;
+		margin-left: 15px;
+		float: left;
   }
+
+	form {
+		background: #88A4F7;
+		float: left;
+		width: 415px;
+		margin-top: 22px;
+		padding: 15px;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		textarea {
+			margin-right: 3px;
+		}
+	}
 
   p {
     label {

@@ -199,11 +199,11 @@ textarea {
 /* Buttons */
 
 .button {
-	background-color:#b8dcff;
+	background-color:#2c4af2;
 	-moz-border-radius:5px;
 	-webkit-border-radius:5px;
 	border-radius:5px;
-	border:1px solid #29668f;
+	border:1px solid darkblue;
 	display:inline-block;
 	cursor:pointer;
 	color:#050505;
@@ -215,7 +215,7 @@ textarea {
 }
 
 .button:hover {
-	background-color:#51a2ed;
+	background-color:#1839F0;
 }
 
 .button:active {
