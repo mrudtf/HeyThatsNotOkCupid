@@ -60,7 +60,7 @@ a {
 
 /* Application (always displayed) */
 html {
-  background: #3B52DB;
+  background: #2939E6;
   overflow-y: scroll;
   height: 100%;
 }
@@ -124,7 +124,7 @@ a:hover {
 }
 
 .sidenav ul li {
-  border-bottom: 1px solid #3B52DB;
+  border-bottom: 1px solid #2939E6;
 }
 
 .sidenav ul li a {
@@ -172,7 +172,7 @@ a:hover {
 }
 
 header {
-  background: #4D62D6;
+  background: #3F5AF2;
   border-bottom: 1px solid darkblue;
 }
 
