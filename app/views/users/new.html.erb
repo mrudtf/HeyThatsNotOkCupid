@@ -2,8 +2,8 @@
   <h1>Sign Up!</h1>
 
   <%= form_for @user do |f| %>
-  <input type="hidden" value="" id="user_latitude" name="user[latitude]">
-  <input type="hidden" value="" id="user_longitude" name="user[longitude]">
+  <input type="hidden" value="40.748444" id="user_latitude" name="user[latitude]">
+  <input type="hidden" value="-73.985658" id="user_longitude" name="user[longitude]">
 
     <p><%= f.label :username %>:
     <%= f.text_field :name, class: "num_input" %></p>

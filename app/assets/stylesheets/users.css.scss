@@ -30,8 +30,10 @@
 
     .name_and_attributes {
       margin: 15px;
+      max-width: 350px;
+      word-wrap: break-word;
       #distance {
-        max-width: 300px;
+
       }
     }
 
