@@ -78,4 +78,9 @@ module UsersHelper
 
     {match: match, friend: friend, enemy: ((100 - match) * 0.8).to_i }
   end
+
+  def verbose_gender(gender)
+    "female" if gender == "F"
+    "male" if gender == "M"
+  end
 end

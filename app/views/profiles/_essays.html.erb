@@ -1,21 +1,21 @@
 <div class="essay" id="summary">
   <% profile.summary.empty? ? button_text = "Fill out this essay!" : button_text = "Edit" %>
   <h3>My self-summary</h3>
-  <p><%= profile.summary %></p>
+  <p><%= simple_format(profile.summary) %></p>
   <%= link_to button_text, "#", class: "edit_button" %>
 </div>
 
 <div class="essay" id="job">
   <% profile.job.empty? ? button_text = "Fill out this essay!" : button_text = "Edit" %>
   <h3>What I'm doing with my life</h3>
-  <p><%= profile.job %></p>
+  <p><%= simple_format(profile.job) %></p>
   <%= link_to button_text, "#", class: "edit_button" %>
 </div>
 
 <div class="essay" id="likes">
   <% profile.likes.empty? ? button_text = "Fill out this essay!" : button_text = "Edit" %>
   <h3>Favorite books, movies, shows, music, and food</h3>
-  <p><%= profile.likes %></p>
+  <p><%= simple_format(profile.likes) %></p>
   <%= link_to button_text, "#", class: "edit_button" %>
 </div>
 

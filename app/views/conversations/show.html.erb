@@ -6,7 +6,7 @@
     <% @messages.each do |message| %>
     <article class="message">
       <h3><%= link_to image_tag(message.sender.photo.url(:small)), user_url(message.sender) %> on <%= nice_time(message.created_at) %>:</h3>
-      <p><%= message.body %></p>
+      <p><%= simple_format(message.body) %></p>
     </article>
     <% end %>
   </div>

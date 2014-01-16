@@ -4,7 +4,7 @@
 
     <!-- Make JS-based filter? -->
     <p>Showing matches for a <%= current_user.orientation.downcase %>
-      <%= current_user.gender %> between the ages of <%= current_user.profile.min_age%> and <%= current_user.profile.max_age %></p>
+      <%= verbose_gender(current_user.gender) %> between the ages of <%= current_user.profile.min_age%> and <%= current_user.profile.max_age %></p>
   </div>
   <div id="users">
     <%= "No matches!" if @users.empty? %>

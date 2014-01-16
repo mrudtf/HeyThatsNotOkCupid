@@ -1,7 +1,7 @@
 # HeyThatsNotOkCupid
 HeyThatsNotOkCupid is a clone of the popular dating site OkCupid with added geocoding and mapping features.
 
-###Complete Features:
+###Completed Features:
 * Sign-up and authorization
 * In-page profile and question editing
 * Question-based matching algorithm
