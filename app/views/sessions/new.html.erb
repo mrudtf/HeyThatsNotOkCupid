@@ -3,8 +3,8 @@
 <form action="<%= session_url %>" method="post">
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-  <input type="hidden" value="" class="user_latitude" name="user[latitude]">
-  <input type="hidden" value="" class="user_longitude" name="user[longitude]">
+  <input type="hidden" value="" class="user_latitude" name="loc[latitude]">
+  <input type="hidden" value="" class="user_longitude" name="loc[longitude]">
 
   <p>
     <label for="user_name">Username</label>
@@ -23,8 +23,8 @@
   <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
     <input value="d" name="user[name]" type="hidden">
     <input value="Password" name="user[password]" type="hidden">
-    <input type="hidden" value="" class="user_latitude" name="user[latitude]">
-    <input type="hidden" value="" class="user_longitude" name="user[longitude]">
+    <input type="hidden" value="" class="user_latitude" name="loc[latitude]">
+    <input type="hidden" value="" class="user_longitude" name="loc[longitude]">
 
   <input type="submit" value="Log in as guest">
 </form>

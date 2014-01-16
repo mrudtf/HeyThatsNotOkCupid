@@ -13,7 +13,9 @@ class SessionsController < ApplicationController
       render :new
     else
       self.current_user = user
-      user.update_attributes!(params[:user])
+      if [params[:loc][:latitude], params[:loc][:longitude]].none? { |n| n.empty? }
+        user.update_attributes(params[:loc])
+      end
       redirect_to root_url
     end
   end
