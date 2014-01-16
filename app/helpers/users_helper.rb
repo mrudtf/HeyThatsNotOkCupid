@@ -80,7 +80,7 @@ module UsersHelper
   end
 
   def verbose_gender(gender)
-    "female" if gender == "F"
-    "male" if gender == "M"
+    return "female" if gender == "F"
+    return "male" if gender == "M"
   end
 end
