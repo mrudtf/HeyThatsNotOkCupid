@@ -15,7 +15,7 @@ It is currently live at [www.heythatsnotokcupid.com.](http://www.heythatsnotokcu
 ###Features to be Implemented:
 * Profile searchability
 * Address texting
-* Visit-frequency checking
+* Stalker guard (i.e. visit-frequency checking)
 * User blocking
 
 ###Technologies Used:
