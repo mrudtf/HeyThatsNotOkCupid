@@ -9,6 +9,8 @@ class Question < ActiveRecord::Base
 
   private
   def proper_number_of_answers
-    #
+    if answers.count < 2 || answers.count > 4
+      errors.add(:question, "needs between two and four answers")
+    end
   end
 end
