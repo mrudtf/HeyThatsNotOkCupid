@@ -57,7 +57,6 @@ $(document).ready(function(event) {
   });
 
   $(".new_response_form").on("ajax:success", function(event, data) {
-    console.log(data);
     var $my_answer = $(event.currentTarget).parent().next().find(".my_answer");
     var $question_div = $(event.currentTarget).parent().parent();
     var newResponse = $(data).filter("#others_page").html();
